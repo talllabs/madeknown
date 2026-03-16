@@ -167,17 +167,12 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
 }
 .hero__slide.active { opacity: 1; }
 
-/* Cinematic people photos */
-/* African farmer — red robe, Kenya */
-.hero__slide:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1504945005722-33670dcaf685?w=1800&q=80'); background-position: center 40%; }
-/* Videographer filming on location */
-.hero__slide:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1800&q=80'); background-position: center 50%; }
-/* Crowded street festival, Asia */
-.hero__slide:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1800&q=80'); background-position: center 50%; }
-/* Portrait — warm golden light */
-.hero__slide:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1800&q=80'); background-position: center 25%; }
-/* Coffee farmer, East Africa */
-.hero__slide:nth-child(5) { background-image: url('https://images.unsplash.com/photo-1523574405849-1e8c1b5f3f2d?w=1800&q=80'); background-position: center 50%; }
+/* Made Known production photos */
+.hero__slide:nth-child(1) { background-image: url('../images/hero.jpg'); background-position: center 40%; }
+.hero__slide:nth-child(2) { background-image: url('../images/hero1.jpg'); background-position: center 50%; }
+.hero__slide:nth-child(3) { background-image: url('../images/hero.png'); background-position: center 50%; }
+.hero__slide:nth-child(4) { background-image: url('../images/madeknown.com03.jpg'); background-position: center 30%; }
+.hero__slide:nth-child(5) { background-image: url('../images/madeknown.com07.jpg'); background-position: center 50%; }
 
 .hero__overlay {
   position: absolute;
@@ -291,6 +286,73 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   LOGO CAROUSEL
+   ═══════════════════════════════════════════════════════════════ */
+.logo-carousel {
+  background: var(--bg);
+  padding: 56px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.logo-carousel__inner {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 0 48px;
+  text-align: center;
+}
+.logo-carousel__label {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 28px;
+}
+.logo-carousel__stage {
+  position: relative;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo-carousel__img {
+  position: absolute;
+  max-height: 80px;
+  max-width: 320px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+.logo-carousel__img.active { opacity: 1; }
+
+/* ═══════════════════════════════════════════════════════════════
+   ABOUT — section photo
+   ═══════════════════════════════════════════════════════════════ */
+.about__photo {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  margin-bottom: 72px;
+  display: block;
+}
+
+/* Contact decorative image */
+.contact__img-wrap {
+  margin-top: 36px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-height: 220px;
+}
+.contact__img-wrap img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ═══════════════════════════════════════════════════════════════
    WHAT WE OFFER — white, 3-col image cards
    ═══════════════════════════════════════════════════════════════ */
 .offers {
@@ -353,7 +415,7 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
 .portfolio-banner__bg {
   position: absolute;
   inset: 0;
-  background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1800&q=80');
+  background-image: url('../images/madeknown.com08.jpg');
   background-size: cover;
   background-position: center 30%;
 }

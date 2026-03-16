@@ -309,6 +309,18 @@
     });
   }
 
+  // ─── Logo carousel ────────────────────────────────────────────────────────
+  function initLogoCarousel() {
+    const imgs = document.querySelectorAll('.logo-carousel__img');
+    if (!imgs.length) return;
+    let current = 0;
+    setInterval(() => {
+      imgs[current].classList.remove('active');
+      current = (current + 1) % imgs.length;
+      imgs[current].classList.add('active');
+    }, 4000);
+  }
+
   // ─── Init ─────────────────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
     // Search
@@ -336,5 +348,6 @@
     initReveal();
     initStats();
     initContactForm();
+    initLogoCarousel();
   });
 })();

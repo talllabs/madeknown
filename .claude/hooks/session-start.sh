@@ -1,0 +1,33 @@
+#!/bin/bash
+set -euo pipefail
+
+# Only run in remote Claude Code on the web sessions
+if [ "${CLAUDE_CODE_REMOTE:-}" != "true" ]; then
+  exit 0
+fi
+
+echo "Session start hook running..."
+
+PROJECT_DIR="${CLAUDE_PROJECT_DIR:-$(pwd)}"
+
+# Install dependencies if package.json exists
+if [ -f "${PROJECT_DIR}/package.json" ]; then
+  echo "Installing Node.js dependencies..."
+  cd "${PROJECT_DIR}"
+  npm install
+fi
+
+# Install Python dependencies if requirements.txt exists
+if [ -f "${PROJECT_DIR}/requirements.txt" ]; then
+  echo "Installing Python dependencies..."
+  pip install -r "${PROJECT_DIR}/requirements.txt" --quiet
+fi
+
+# Install Python dependencies if pyproject.toml exists
+if [ -f "${PROJECT_DIR}/pyproject.toml" ]; then
+  echo "Installing Python project dependencies..."
+  cd "${PROJECT_DIR}"
+  pip install -e ".[dev]" --quiet 2>/dev/null || pip install -e . --quiet
+fi
+
+echo "Session start hook complete."

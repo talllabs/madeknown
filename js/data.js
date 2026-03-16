@@ -1,0 +1,222 @@
+const VIDEOS = [
+  {
+    id: 1,
+    title: "Inspire 20th Anniversary",
+    client: "Inspire",
+    category: "Commercial",
+    tags: ["Commercial", "Anniversary"],
+    blurb: "A cinematic celebration of two decades of Inspire — honoring legacy, community, and the stories that endure.",
+    platform: "youtube",
+    videoId: "eTsmhJHWClQ",
+    featured: true,
+    year: 2024
+  },
+  {
+    id: 2,
+    title: "AHD Cotopaxi",
+    client: "Cotopaxi",
+    category: "Documentary",
+    tags: ["Documentary", "Social Impact"],
+    blurb: "A powerful documentary following Andean communities and the mission-driven work of AHD at the base of Cotopaxi volcano.",
+    platform: "youtube",
+    videoId: "B3wrnDvipnE",
+    featured: true,
+    year: 2023
+  },
+  {
+    id: 3,
+    title: "Give Where You Go",
+    client: "Outpatch",
+    category: "Commercial",
+    tags: ["Commercial", "Social Impact"],
+    blurb: "Commercial highlighting Outpatch's mission to support community impact through travel-linked giving. Every trip becomes a contribution.",
+    platform: "vimeo",
+    videoId: "638855073",
+    featured: false,
+    year: 2021
+  },
+  {
+    id: 4,
+    title: "Step Into the Kitchen",
+    client: "SideChef",
+    category: "Commercial",
+    tags: ["Commercial", "Product Demo"],
+    blurb: "Brand commercial introducing SideChef's guided, step-by-step cooking experience inside the kitchen.",
+    platform: "vimeo",
+    videoId: "146186425",
+    featured: false,
+    year: 2015
+  },
+  {
+    id: 5,
+    title: "Coffee Is Life",
+    client: "Made Known Original",
+    category: "Commercial",
+    tags: ["Commercial", "Lifestyle"],
+    blurb: "Lifestyle commercial centered on coffee culture and the ritual of daily coffee consumption — a love letter to the morning cup.",
+    platform: "vimeo",
+    videoId: "221464315",
+    featured: false,
+    year: 2017
+  },
+  {
+    id: 6,
+    title: "Stone & Cloth Kickstarter",
+    client: "Stone & Cloth",
+    category: "Brand Launch",
+    tags: ["Brand Launch", "Crowdfunding"],
+    blurb: "Kickstarter campaign video for the Stone & Cloth apparel launch — brand storytelling meets product showcase for a purpose-driven startup.",
+    platform: "vimeo",
+    videoId: "137018485",
+    featured: false,
+    year: 2015
+  },
+  {
+    id: 7,
+    title: "Coffee Farming in Kenya",
+    client: "Documentary",
+    category: "Documentary",
+    tags: ["Documentary", "Social Impact"],
+    blurb: "Documentary-style piece showing the coffee farming process and community stories in Kenya — from seed to cup.",
+    platform: "vimeo",
+    videoId: "221464023",
+    featured: false,
+    year: 2017
+  },
+  {
+    id: 8,
+    title: "Sigmund",
+    client: "Sigmund",
+    category: "Commercial",
+    tags: ["Commercial", "Lifestyle"],
+    blurb: "A moody brand film capturing the essence of Sigmund — where identity and craftsmanship converge.",
+    platform: "vimeo",
+    videoId: "561585470",
+    featured: false,
+    year: 2021
+  },
+  {
+    id: 9,
+    title: "Coffee Couple",
+    client: "Documentary",
+    category: "Documentary",
+    tags: ["Documentary", "Lifestyle"],
+    blurb: "An intimate documentary portrait of a couple bound together by their shared passion for coffee and craft.",
+    platform: "vimeo",
+    videoId: "384909934",
+    featured: false,
+    year: 2019
+  },
+  {
+    id: 10,
+    title: "Andean Health: What We Do",
+    client: "Andean Health",
+    category: "Documentary",
+    tags: ["Documentary", "Social Impact"],
+    blurb: "A compelling look inside Andean Health's mission — bringing healthcare and hope to remote communities across the Andes.",
+    platform: "vimeo",
+    videoId: "822827038",
+    featured: false,
+    year: 2023
+  },
+  {
+    id: 11,
+    title: "Papua New Guinea",
+    client: "LWR",
+    category: "Documentary",
+    tags: ["Documentary", "Travel"],
+    blurb: "A vivid documentary journey into Papua New Guinea — capturing culture, landscape, and lives rarely seen by the world.",
+    platform: "vimeo",
+    videoId: "109343274",
+    featured: false,
+    year: 2014
+  },
+  {
+    id: 12,
+    title: "Novo",
+    client: "Novo",
+    category: "Commercial",
+    tags: ["Commercial", "Brand Launch"],
+    blurb: "Brand launch film for Novo — a story of fresh beginnings, bold vision, and the courage to start something new.",
+    platform: "vimeo",
+    videoId: "282919808",
+    featured: false,
+    year: 2018
+  },
+  {
+    id: 13,
+    title: "VR Doc — LWR",
+    client: "LWR",
+    category: "Documentary",
+    tags: ["Documentary", "Social Impact"],
+    blurb: "An immersive VR documentary for Lutheran World Relief placing viewers inside the human story of global aid and transformation.",
+    platform: "youtube",
+    videoId: "FmfJgx94u7Q",
+    featured: false,
+    year: 2016
+  },
+  {
+    id: 14,
+    title: "Mini Doc — Daisy, Peru",
+    client: "LWR",
+    category: "Documentary",
+    tags: ["Documentary", "Travel"],
+    blurb: "A moving mini-documentary following Daisy in Peru — her story, her community, and the ripple effect of compassionate aid.",
+    platform: "vimeo",
+    videoId: "77809770",
+    featured: false,
+    year: 2013
+  },
+  {
+    id: 15,
+    title: "PNG Media Lunch",
+    client: "PNG Media",
+    category: "Documentary",
+    tags: ["Documentary", "Social Impact"],
+    blurb: "Behind-the-scenes documentary capturing the power of storytelling and media in Papua New Guinea.",
+    platform: "vimeo",
+    videoId: "132164108",
+    featured: false,
+    year: 2015
+  },
+  {
+    id: 16,
+    title: "Galapagos",
+    client: "Documentary",
+    category: "Documentary",
+    tags: ["Documentary", "Travel"],
+    blurb: "A breathtaking documentary immersion into the Galapagos Islands — wildlife, wonder, and the fragile beauty of our world.",
+    platform: "vimeo",
+    videoId: "71029708",
+    featured: false,
+    year: 2013
+  },
+  {
+    id: 17,
+    title: "LWR Champa — India",
+    client: "LWR",
+    category: "Documentary",
+    tags: ["Documentary", "Social Impact"],
+    blurb: "Mini documentary following Champa's journey in rural India — a story of resilience, community, and transformative support.",
+    platform: "vimeo",
+    videoId: "301280352",
+    featured: false,
+    year: 2018
+  },
+  {
+    id: 18,
+    title: "Live Recording",
+    client: "Live Recording",
+    category: "Commercial",
+    tags: ["Commercial", "Music"],
+    blurb: "A kinetic live recording capture — raw energy, real artistry, and the electricity of performance preserved on film.",
+    platform: "vimeo",
+    videoId: "115654417",
+    featured: false,
+    year: 2014
+  }
+];
+
+const ALL_TAGS = [...new Set(VIDEOS.flatMap(v => v.tags))].sort();
+const ALL_CLIENTS = [...new Set(VIDEOS.map(v => v.client))].sort();
+const ALL_CATEGORIES = [...new Set(VIDEOS.map(v => v.category))].sort();

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Made Known Pictures — Filmmakers, designers, and content strategists who love storytelling. Commercials, mini-docs, founder profiles, and branded content.">
+  <meta property="og:title" content="Made Known Pictures">
+  <meta property="og:description" content="From concept to final frame, we craft videos that tell real human stories and move people to action.">
+  <meta property="og:type" content="website">
+  <title>Made Known Pictures — Video Production</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════ NAV ═══════════════════════════════ -->
+  <nav id="main-nav" class="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">
+        <span class="nav__logo-mark">MK</span>
+        <span class="nav__logo-text">Made Known <em>Pictures</em></span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact" class="nav__cta">Get a Quote</a></li>
+      </ul>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════ HERO ═══════════════════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero__bg">
+      <div class="hero__bg-grid"></div>
+      <div class="hero__bg-glow hero__bg-glow--1"></div>
+      <div class="hero__bg-glow hero__bg-glow--2"></div>
+    </div>
+    <div class="hero__content">
+      <div class="hero__eyebrow">
+        <span class="hero__dot"></span>
+        Los Angeles · Est. 2007
+      </div>
+      <h1 class="hero__headline">
+        We make<br>
+        <span id="hero-word" class="hero__word">Commercials.</span>
+      </h1>
+      <p class="hero__sub">
+        Made Known Pictures crafts films that reveal hidden stories — commercials, mini-docs, founder profiles, and branded content for brands that want to move people.
+      </p>
+      <div class="hero__actions">
+        <a href="#work" class="btn btn--primary">View Our Work</a>
+        <a href="#contact" class="btn btn--ghost">Start a Project</a>
+      </div>
+    </div>
+    <div class="hero__scroll-indicator">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
+    </div>
+    <!-- Featured video strip -->
+    <div class="hero__featured">
+      <div class="hero__featured-label">Featured</div>
+      <div class="hero__featured-items">
+        <button class="hero__featured-item" onclick="openModal(1)">
+          <img src="https://img.youtube.com/vi/eTsmhJHWClQ/maxresdefault.jpg" alt="Inspire 20th Anniversary">
+          <div class="hero__featured-overlay">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <span>Inspire 20th Anniversary</span>
+          </div>
+        </button>
+        <button class="hero__featured-item" onclick="openModal(2)">
+          <img src="https://img.youtube.com/vi/B3wrnDvipnE/maxresdefault.jpg" alt="AHD Cotopaxi">
+          <div class="hero__featured-overlay">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <span>AHD Cotopaxi</span>
+          </div>
+        </button>
+        <button class="hero__featured-item" onclick="openModal(10)">
+          <img src="https://vumbnail.com/822827038.jpg" alt="Andean Health">
+          <div class="hero__featured-overlay">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            <span>Andean Health</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════ STATS ════════════════════════════ -->
+  <section class="stats" id="stats-section">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stat reveal">
+          <div class="stat__number" data-count="18" data-suffix="+">0+</div>
+          <div class="stat__label">Films Produced</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat__number" data-count="4" data-suffix=" Continents">0</div>
+          <div class="stat__label">Global Reach</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat__number" data-count="5" data-suffix=" Languages">0</div>
+          <div class="stat__label">Stories Told In</div>
+        </div>
+        <div class="stat reveal">
+          <div class="stat__number" data-count="2007">0</div>
+          <div class="stat__label">Founded</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ PORTFOLIO ════════════════════════════ -->
+  <section class="portfolio" id="work">
+    <div class="portfolio__header container">
+      <div class="reveal">
+        <div class="section-eyebrow">Portfolio</div>
+        <h2 class="section-title">Our Work</h2>
+        <p class="section-sub">Browse our full catalog of films — filter by type, client, or style to find what moves you.</p>
+      </div>
+    </div>
+
+    <div class="portfolio__layout container">
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar__inner">
+
+          <!-- Search -->
+          <div class="sidebar__search">
+            <svg class="sidebar__search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input type="text" id="search-input" class="sidebar__search-input" placeholder="Search projects…">
+          </div>
+
+          <!-- Sort -->
+          <div class="sidebar__section">
+            <div class="sidebar__section-title">Sort By</div>
+            <select id="sort-select" class="sidebar__select">
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+              <option value="az">Title A–Z</option>
+              <option value="za">Title Z–A</option>
+            </select>
+          </div>
+
+          <!-- Category filter -->
+          <div class="sidebar__section">
+            <div class="sidebar__section-title">Category</div>
+            <div class="filter-group" id="filter-categories"></div>
+          </div>
+
+          <!-- Tag filter -->
+          <div class="sidebar__section">
+            <div class="sidebar__section-title">Tags</div>
+            <div class="filter-group" id="filter-tags"></div>
+          </div>
+
+          <!-- Client filter -->
+          <div class="sidebar__section">
+            <div class="sidebar__section-title">Client</div>
+            <div class="filter-group" id="filter-clients"></div>
+          </div>
+
+          <button class="sidebar__clear-btn" onclick="clearAllFilters()">Reset All Filters</button>
+        </div>
+      </aside>
+
+      <!-- MAIN GRID -->
+      <div class="portfolio__main">
+        <!-- Toolbar -->
+        <div class="portfolio__toolbar">
+          <div id="active-filters"></div>
+          <div class="portfolio__toolbar-right">
+            <span class="results-count" id="results-count">0 projects</span>
+          </div>
+        </div>
+
+        <!-- Mobile filter toggle -->
+        <button class="mobile-filter-btn" onclick="toggleSidebar()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="14" y2="12"/><line x1="4" y1="18" x2="10" y2="18"/>
+          </svg>
+          Filters
+          <span id="filter-count-badge" class="filter-badge" style="display:none"></span>
+        </button>
+
+        <!-- Grid -->
+        <div class="video-grid" id="portfolio-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ ABOUT ═══════════════════════════════ -->
+  <section class="about" id="about">
+    <div class="container">
+
+      <div class="about__intro reveal">
+        <div class="section-eyebrow">About Us</div>
+        <h2 class="section-title">Made Known Pictures</h2>
+        <p class="about__lead">
+          Made Known is comprised of filmmakers, designers, and content strategists who love storytelling. We make commercials, mini-docs, founder profiles, explainer videos, and branded content.
+        </p>
+        <p class="about__body">
+          We love helping people tell their unique and personal stories, extending their reach through the power of video. Made Known Pictures was founded in 2007 by Scott Blanding and Brad LaBriola with the mission to produce hidden stories that should be made known to a wider audience. They have made commercials, mini-documentaries and promotional films for apparel companies, cooking apps, and non-profits supporting coffee farmers in Kenya.
+        </p>
+      </div>
+
+      <div class="founders">
+        <div class="founder reveal">
+          <div class="founder__avatar">
+            <div class="founder__avatar-inner">SB</div>
+          </div>
+          <div class="founder__content">
+            <div class="founder__role">DP, Writer, Director</div>
+            <h3 class="founder__name">Scott Blanding</h3>
+            <p class="founder__bio">
+              A life-long film lover, Scott gradually combined his concern for social justice with his passion for film and communication. Most notably was <em>Women in War Zones</em> (Best Documentary, 2009 Philadelphia Film Festival and Cinefest), a documentary he shot and directed with Brad about two victims of sexual violence at Panzi Hospital in the DRC.
+            </p>
+            <p class="founder__bio">
+              After growing up in Roanoke, VA, Scott pursued filmmaking in Nicaragua, the Czech Republic and the USA, graduating from Temple University in Philadelphia, PA. He now lives in LA, serves as a reservist in the Marines, and continues working with Women In War Zones International and Made Known Pictures.
+            </p>
+            <div class="founder__tags">
+              <span>Director</span><span>Cinematography</span><span>Social Impact</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="founder reveal">
+          <div class="founder__avatar">
+            <div class="founder__avatar-inner">BL</div>
+          </div>
+          <div class="founder__content">
+            <div class="founder__role">Producer, Writer, Editor</div>
+            <h3 class="founder__name">Brad LaBriola</h3>
+            <p class="founder__bio">
+              Brad's love for storytelling started with books. With the mentorship of Robert Pledge, CEO of Contact Press Images and featured in the Academy Award winning <em>Born Into Brothels</em>, Brad has produced films on four continents in five languages.
+            </p>
+            <p class="founder__bio">
+              From 2010–2012, Brad earned his MFA at the UCLA Producers Program, with mentorship by Oscar-winning producers Peter Guber, David Hoberman, Bobby Moresco, and Tom Nunan. His commitment is to produce deeply-felt stories that bring meaning to the confusion of our lives and renew a sense of wonder in humanity.
+            </p>
+            <blockquote class="founder__quote">
+              "One of the most meaningful things I've done is helping others tell their story."
+            </blockquote>
+            <div class="founder__tags">
+              <span>Producer</span><span>Editor</span><span>UCLA MFA</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about__awards reveal">
+        <div class="award">
+          <div class="award__icon">◆</div>
+          <div class="award__content">
+            <div class="award__title">Best Documentary</div>
+            <div class="award__body">2009 Philadelphia Film Festival — <em>Women in War Zones</em></div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="award__icon">◆</div>
+          <div class="award__content">
+            <div class="award__title">Best Documentary</div>
+            <div class="award__body">Cinefest — <em>Women in War Zones</em></div>
+          </div>
+        </div>
+        <div class="award">
+          <div class="award__icon">◆</div>
+          <div class="award__content">
+            <div class="award__title">4 Continents</div>
+            <div class="award__body">Films produced across North America, South America, Africa, Asia & Pacific</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ SERVICES ═════════════════════════════ -->
+  <section class="services">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-eyebrow">What We Do</div>
+        <h2 class="section-title">From Concept to Final Frame</h2>
+      </div>
+      <div class="services__grid">
+        <div class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M15 10l4.553-2.069A1 1 0 0 1 21 8.82v6.36a1 1 0 0 1-1.447.89L15 14M3 8a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8z"/>
+            </svg>
+          </div>
+          <h3>Commercials</h3>
+          <p>High-impact brand commercials and product demos that stop the scroll and convert viewers into customers.</p>
+        </div>
+        <div class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+            </svg>
+          </div>
+          <h3>Mini-Documentaries</h3>
+          <p>Short-form documentary storytelling that reveals the humanity behind brands, causes, and communities.</p>
+        </div>
+        <div class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Founder Profiles</h3>
+          <p>Personal, authentic founder stories that build trust and connect audiences to the vision behind your brand.</p>
+        </div>
+        <div class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Social Impact Films</h3>
+          <p>Compelling cause-driven content that mobilizes support, raises awareness, and inspires lasting change.</p>
+        </div>
+        <div class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
+            </svg>
+          </div>
+          <h3>Branded Content</h3>
+          <p>Engaging branded video series and campaigns that grow audiences and deepen brand loyalty over time.</p>
+        </div>
+        <div class="service reveal">
+          <div class="service__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </div>
+          <h3>Explainer Videos</h3>
+          <p>Clear, visually engaging explainer and product videos that make complex ideas instantly understandable.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ CONTACT ═════════════════════════════ -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__left reveal">
+          <div class="section-eyebrow">Let's Talk</div>
+          <h2 class="section-title">What's your story?<br><em>Make it Made Known.</em></h2>
+          <p class="contact__sub">From concept to final frame, we craft videos that tell real human stories and move people to action. Tell us about your project — we'd love to help.</p>
+          <div class="contact__details">
+            <div class="contact__detail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+              <span>Los Angeles, CA</span>
+            </div>
+            <div class="contact__detail">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              <span>info@madeknownpictures.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="contact__right reveal">
+          <form class="contact-form" id="contact-form">
+            <div class="form-row">
+              <div class="form-field">
+                <label>Name</label>
+                <input type="text" placeholder="Your name" required>
+              </div>
+              <div class="form-field">
+                <label>Email</label>
+                <input type="email" placeholder="your@email.com" required>
+              </div>
+            </div>
+            <div class="form-field">
+              <label>Company / Project</label>
+              <input type="text" placeholder="Company name or project title">
+            </div>
+            <div class="form-field">
+              <label>Project Type</label>
+              <select>
+                <option value="">Select a service…</option>
+                <option>Commercial</option>
+                <option>Mini-Documentary</option>
+                <option>Founder Profile</option>
+                <option>Social Impact Film</option>
+                <option>Branded Content</option>
+                <option>Explainer Video</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label>Tell us about your project</label>
+              <textarea placeholder="Describe your vision, timeline, and goals…" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════ FOOTER ══════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <div class="footer__logo">
+            <span class="nav__logo-mark">MK</span>
+            <span>Made Known <em>Pictures</em></span>
+          </div>
+          <p class="footer__tagline">From concept to final frame, we craft videos that tell real human stories and move people to action.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <div class="footer__col-title">Navigate</div>
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Services</div>
+            <a href="#contact">Commercials</a>
+            <a href="#contact">Documentaries</a>
+            <a href="#contact">Branded Content</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2024 Made Known Pictures. Founded by Scott Blanding &amp; Brad LaBriola.</p>
+        <p>Made with purpose. Los Angeles, CA.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ════════════════════════════════ MODAL ═══════════════════════════════ -->
+  <div class="modal" id="video-modal" role="dialog" aria-modal="true">
+    <div class="modal__backdrop"></div>
+    <div class="modal__container">
+      <button class="modal__close" onclick="closeModal()" aria-label="Close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <div class="modal__video-wrap">
+        <iframe id="modal-iframe" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="modal__info">
+        <h3 id="modal-title" class="modal__title"></h3>
+        <p id="modal-client" class="modal__client"></p>
+        <p id="modal-blurb" class="modal__blurb"></p>
+        <div id="modal-tags" class="modal__tags"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

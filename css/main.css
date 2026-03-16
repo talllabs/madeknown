@@ -169,7 +169,7 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
 
 /* Made Known production photos */
 .hero__slide:nth-child(1) { background-image: url('../images/hero.jpg'); background-position: center 40%; }
-.hero__slide:nth-child(2) { background-image: url('../images/hero1.jpg'); background-position: center 50%; }
+.hero__slide:nth-child(2) { background-image: url('../images/scottmadeknown.com10.jpeg'); background-position: center 25%; }
 .hero__slide:nth-child(3) { background-image: url('../images/hero.png'); background-position: center 50%; }
 .hero__slide:nth-child(4) { background-image: url('../images/madeknown.com03.jpg'); background-position: center 30%; }
 .hero__slide:nth-child(5) { background-image: url('../images/madeknown.com07.jpg'); background-position: center 50%; }

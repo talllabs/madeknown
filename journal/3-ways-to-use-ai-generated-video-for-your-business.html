@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="3 Simple Ways to Use AI-Generated Video for Your Business — Made Known Pictures Journal">
+  <title>3 Simple Ways to Use AI-Generated Video for Your Business — Made Known Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .article-hero {
+      background: #0a0a0a;
+      color: #fff;
+      padding: 120px 0 0;
+    }
+    .article-hero__inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem 60px;
+    }
+    .article-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color 0.2s;
+    }
+    .article-hero__back:hover { color: #fff; }
+    .article-hero__label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 1.25rem;
+    }
+    .article-hero__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .article-hero__meta {
+      font-size: 0.85rem;
+      color: #888;
+    }
+    .article-hero__img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .article-body {
+      background: #fff;
+      padding: 80px 0 120px;
+    }
+    .article-body__inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    .article-body__inner p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+    .article-body__inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #111;
+      margin: 3rem 0 1.25rem;
+      line-height: 1.3;
+    }
+    .article-body__inner h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #111;
+      margin: 2.5rem 0 1rem;
+    }
+    .article-body__inner ul,
+    .article-body__inner ol {
+      padding-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .article-body__inner li {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    .article-body__inner blockquote {
+      border-left: 3px solid #111;
+      padding: 0.75rem 0 0.75rem 1.5rem;
+      margin: 2rem 0;
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: #333;
+      line-height: 1.6;
+    }
+    .article-body__inner strong {
+      color: #111;
+      font-weight: 600;
+    }
+
+    .article-video-wrap {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 2.5rem 0;
+      background: #000;
+    }
+    .article-video-wrap iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      border: 0;
+    }
+
+    .article-cta {
+      background: #0a0a0a;
+      color: #fff;
+      border-radius: 4px;
+      padding: 3rem;
+      margin-top: 4rem;
+      text-align: center;
+    }
+    .article-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+    }
+    .article-cta p {
+      color: #aaa;
+      font-size: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .article-cta .btn-cta {
+      display: inline-block;
+      background: #fff;
+      color: #111;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2.25rem;
+      border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .article-cta .btn-cta:hover {
+      background: #e0e0e0;
+    }
+
+    .article-divider {
+      border: none;
+      border-top: 1px solid #e8e8e8;
+      margin: 3rem 0;
+    }
+
+    .article-number {
+      display: inline-block;
+      font-family: 'Playfair Display', serif;
+      font-size: 4rem;
+      font-weight: 700;
+      color: #e8e8e8;
+      line-height: 1;
+      margin-bottom: -0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav" class="nav">
+    <div class="nav__inner">
+      <a href="../" class="nav__logo">
+        <img src="../images/logo.svg" alt="Made Known Pictures Logo" class="nav__logo-img nav__logo-img--dark">
+        <img src="../images/logo-white.svg" alt="Made Known Pictures Logo" class="nav__logo-img nav__logo-img--light">
+        <span class="nav__logo-text">MADE KNOWN</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../#work">See Our Work</a></li>
+        <li><a href="../#about">Meet the Team</a></li>
+        <li><a href="./" class="active">Journal</a></li>
+        <li><a href="../#contact">Contact</a></li>
+        <li><a href="../#contact" class="nav__cta">Schedule a Call</a></li>
+      </ul>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ARTICLE HERO -->
+  <header class="article-hero">
+    <div class="article-hero__inner">
+      <a href="./" class="article-hero__back">← Journal</a>
+      <div class="article-hero__label">Made Known &nbsp;·&nbsp; AI &amp; Video</div>
+      <h1 class="article-hero__title">3 Simple Ways to Use AI-Generated Video for Your Business</h1>
+      <p class="article-hero__meta">Dec 13, 2024 &nbsp;·&nbsp; By Made Known</p>
+    </div>
+    <img class="article-hero__img"
+      src="https://images.squarespace-cdn.com/content/v1/62201be1032a6e49d325f0d5/1734133750390-6EG8X340I720XM0IX3SY/unsplash-image-hWSNT_Pp4x4.jpg"
+      alt="AI-generated video for business"
+      onerror="this.style.display='none'">
+  </header>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+    <div class="article-body__inner">
+
+      <p>
+        It's not a stretch to say that AI-generated video is rapidly changing the landscape of content creation.
+        A few years ago, producing a polished corporate video required a full crew, a studio, and a significant budget.
+        Today, AI tools allow businesses to produce quality video content faster and at a fraction of the cost —
+        without sacrificing the message.
+      </p>
+      <p>
+        But here's the thing: AI video on its own is just a tool. Like any tool, what matters is <em>how you use it</em>.
+        Below are three practical, real-world ways businesses are using AI-generated video right now — and how you can too.
+      </p>
+
+      <hr class="article-divider">
+
+      <!-- #1 -->
+      <div class="article-number">01</div>
+      <h2>Boost Your Marketing Content</h2>
+
+      <p>
+        One of the highest-leverage uses of AI video is in marketing. Whether you're running paid social ads,
+        updating your website, or filling your content calendar, AI lets you produce more — without proportionally
+        increasing your costs.
+      </p>
+      <p>
+        Think about the traditional content cycle: script → shoot → edit → approve → publish. For a single 30-second ad,
+        that cycle might take weeks and thousands of dollars. AI-assisted video can compress that down to days —
+        or even hours — for certain content types.
+      </p>
+      <p>
+        Here's where it makes the most sense:
+      </p>
+      <ul>
+        <li><strong>Product explainers and demos</strong> — AI avatars or narrated slide videos can walk customers through a product without a camera crew.</li>
+        <li><strong>Social media content</strong> — Short-form video for Instagram Reels, TikTok, or YouTube Shorts can be generated at volume, then A/B tested for performance.</li>
+        <li><strong>Localized versions</strong> — Once you have a base video, AI can generate translated voiceovers or on-screen text for different markets, dramatically expanding your reach.</li>
+      </ul>
+      <p>
+        The key is to pair AI efficiency with authentic storytelling. Let AI handle the volume work,
+        and reserve your human (or professional) production budget for the flagship content that truly represents your brand.
+      </p>
+
+      <hr class="article-divider">
+
+      <!-- #2 -->
+      <div class="article-number">02</div>
+      <h2>Host Virtual Events with AI Speakers</h2>
+
+      <p>
+        Virtual events exploded during the pandemic and never really went away — because they work.
+        They eliminate travel costs, open your audience to anyone with an internet connection, and can be
+        recorded for evergreen content use.
+      </p>
+      <p>
+        Now layer in AI: with tools like HeyGen, Synthesia, or ElevenLabs + video synthesis, you can create
+        AI-generated speaker presentations that look and sound surprisingly real. This opens up possibilities
+        that weren't available before:
+      </p>
+      <ul>
+        <li><strong>Founders who can't travel</strong> can still "appear" at events in multiple cities simultaneously.</li>
+        <li><strong>Training and onboarding videos</strong> can be refreshed quickly when policies change — no need to reshoot.</li>
+        <li><strong>Thought leadership content</strong> can be generated from an existing interview transcript and repurposed across formats.</li>
+      </ul>
+      <p>
+        One real-world example: a nonprofit we worked with used an AI-generated version of their executive director
+        to open a virtual donor gala. The director was traveling internationally and couldn't attend. Their AI
+        "double" gave a personalized 3-minute welcome address — complete with the director's voice and likeness —
+        and donors loved it.
+      </p>
+
+      <div class="article-video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/duiNiV2Ji5w"
+          allow="autoplay; fullscreen; picture-in-picture"
+          allowfullscreen
+          title="AI Video Example">
+        </iframe>
+      </div>
+
+      <p>
+        <em>Note: Always be transparent with your audience when AI is involved. Authenticity builds trust —
+        and trust is the foundation of any lasting relationship with your customers or donors.</em>
+      </p>
+
+      <hr class="article-divider">
+
+      <!-- #3 -->
+      <div class="article-number">03</div>
+      <h2>Personalize Customer and Donor Videos at Scale</h2>
+
+      <p>
+        This is the one that genuinely changes the game.
+      </p>
+      <p>
+        Personalization has always been a proven driver of conversions — whether you're selling a product or
+        cultivating a donor relationship. But until recently, true video personalization was only accessible
+        to enterprise brands with massive budgets.
+      </p>
+      <p>
+        AI changes that. Tools now exist that let you generate thousands of unique video messages — each one
+        addressed to a specific person, referencing their name, their history with your brand, or their
+        specific interests — at near-zero marginal cost per video.
+      </p>
+      <p>Here's what that looks like in practice:</p>
+      <ul>
+        <li><strong>E-commerce brands</strong> sending personalized "thank you" videos post-purchase, with the customer's name and the exact products they bought.</li>
+        <li><strong>Nonprofits</strong> sending year-end donor recaps: "Thanks to you, [Name], we served 1,200 families this year" — with footage that matches their donation level or area of interest.</li>
+        <li><strong>B2B sales teams</strong> using AI-generated personalized video outreach to cut through inbox noise and dramatically improve response rates.</li>
+      </ul>
+      <p>
+        When people feel seen — when a message is clearly meant <em>for them</em> and not just blasted at them —
+        they respond. That's not new psychology. What's new is that AI finally makes it accessible to businesses
+        of all sizes.
+      </p>
+
+      <hr class="article-divider">
+
+      <h2>The Bottom Line</h2>
+      <p>
+        AI-generated video isn't about replacing human creativity. It's about removing the barriers — time, cost,
+        logistics — that prevent great stories from being told at the scale they deserve.
+      </p>
+      <p>
+        The businesses that will win over the next five years are those that learn to combine the efficiency of AI
+        with the irreplaceable power of authentic human storytelling. One without the other is incomplete.
+      </p>
+      <p>
+        If you're curious about how to integrate AI video into your content strategy — or how a professionally
+        produced "hero" video can anchor your entire content ecosystem — we'd love to talk.
+      </p>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h3>Ready to tell your story?</h3>
+        <p>Find a time that works for your schedule. We'd love to hear what you're building.</p>
+        <a href="https://calendly.com/madeknown" class="btn-cta">Schedule a Call →</a>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="../images/logo-white.svg" alt="Made Known Pictures" class="footer__logo-img">
+            <span>MADE KNOWN</span>
+          </div>
+          <p class="footer__tagline">From concept to final frame, we craft videos that tell real human stories and move people to action.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <div class="footer__col-title">Navigate</div>
+            <a href="../#work">Our Work</a>
+            <a href="../#about">About</a>
+            <a href="./">Journal</a>
+            <a href="../#contact">Contact</a>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Services</div>
+            <a href="../#contact">Commercials</a>
+            <a href="../#contact">Documentaries</a>
+            <a href="../#contact">Branded Content</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2024 Made Known Pictures. Founded by Scott Blanding &amp; Brad LaBriola.</p>
+        <p>Los Angeles, CA · Est. 2007</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('nav-toggle')?.addEventListener('click', () => {
+      document.getElementById('main-nav').classList.toggle('mobile-open');
+    });
+  </script>
+</body>
+</html>

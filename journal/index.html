@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Made Known Journal — insights on video production, storytelling, and the future of branded content.">
+  <title>Journal — Made Known Pictures</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .journal-hero {
+      background: #0a0a0a;
+      color: #fff;
+      padding: 120px 0 80px;
+      text-align: center;
+    }
+    .journal-hero__label {
+      font-size: 0.75rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #aaa;
+      margin-bottom: 1rem;
+    }
+    .journal-hero__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      margin-bottom: 1.25rem;
+    }
+    .journal-hero__sub {
+      color: #aaa;
+      font-size: 1.1rem;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    .journal-grid {
+      padding: 80px 0 120px;
+      background: #fff;
+    }
+    .journal-grid .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .journal-card {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+      background: #fff;
+      border: 1px solid #e8e8e8;
+      border-radius: 4px;
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .journal-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(0,0,0,0.12);
+    }
+    .journal-card__img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+    }
+    .journal-card__body {
+      padding: 1.75rem;
+    }
+    .journal-card__meta {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 0.75rem;
+    }
+    .journal-card__title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 0.75rem;
+      color: #111;
+    }
+    .journal-card__excerpt {
+      font-size: 0.9rem;
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+    .journal-card__read {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #111;
+      text-decoration: none;
+      border-bottom: 1.5px solid #111;
+      padding-bottom: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav" class="nav">
+    <div class="nav__inner">
+      <a href="../" class="nav__logo">
+        <img src="../images/logo.svg" alt="Made Known Pictures Logo" class="nav__logo-img nav__logo-img--dark">
+        <img src="../images/logo-white.svg" alt="Made Known Pictures Logo" class="nav__logo-img nav__logo-img--light">
+        <span class="nav__logo-text">MADE KNOWN</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../#work">See Our Work</a></li>
+        <li><a href="../#about">Meet the Team</a></li>
+        <li><a href="./" class="active">Journal</a></li>
+        <li><a href="../#contact">Contact</a></li>
+        <li><a href="../#contact" class="nav__cta">Schedule a Call</a></li>
+      </ul>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="journal-hero">
+    <div class="container">
+      <div class="journal-hero__label">Made Known</div>
+      <h1 class="journal-hero__title">Journal</h1>
+      <p class="journal-hero__sub">Insights on video, storytelling, and what moves people to act.</p>
+    </div>
+  </section>
+
+  <!-- ARTICLES GRID -->
+  <section class="journal-grid">
+    <div class="container">
+
+      <a href="3-ways-to-use-ai-generated-video-for-your-business.html" class="journal-card">
+        <img class="journal-card__img"
+          src="https://images.squarespace-cdn.com/content/v1/62201be1032a6e49d325f0d5/1734133750390-6EG8X340I720XM0IX3SY/unsplash-image-hWSNT_Pp4x4.jpg"
+          alt="AI-generated video for business"
+          onerror="this.style.display='none'">
+        <div class="journal-card__body">
+          <div class="journal-card__meta">Dec 13, 2024 &nbsp;·&nbsp; Made Known</div>
+          <div class="journal-card__title">3 Simple Ways to Use AI-Generated Video for Your Business</div>
+          <p class="journal-card__excerpt">AI video tools are transforming how brands communicate — here's how to put them to work without losing the human touch.</p>
+          <span class="journal-card__read">Read Article →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="../images/logo-white.svg" alt="Made Known Pictures" class="footer__logo-img">
+            <span>MADE KNOWN</span>
+          </div>
+          <p class="footer__tagline">From concept to final frame, we craft videos that tell real human stories and move people to action.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <div class="footer__col-title">Navigate</div>
+            <a href="../#work">Our Work</a>
+            <a href="../#about">About</a>
+            <a href="./">Journal</a>
+            <a href="../#contact">Contact</a>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Services</div>
+            <a href="../#contact">Commercials</a>
+            <a href="../#contact">Documentaries</a>
+            <a href="../#contact">Branded Content</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2024 Made Known Pictures. Founded by Scott Blanding &amp; Brad LaBriola.</p>
+        <p>Los Angeles, CA · Est. 2007</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav toggle
+    document.getElementById('nav-toggle')?.addEventListener('click', () => {
+      document.getElementById('main-nav').classList.toggle('mobile-open');
+    });
+  </script>
+</body>
+</html>

@@ -1,20 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-  <!-- Black square -->
-  <rect width="52" height="52" fill="#000"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <defs>
+    <filter id="rough" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.03" numOctaves="4" seed="9" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+  </defs>
 
-  <!-- Figure body -->
-  <rect x="23" y="28" width="6" height="9" rx="1" fill="#fff"/>
+  <!-- Black square background -->
+  <rect width="200" height="200" fill="#000"/>
 
-  <!-- Head -->
-  <circle cx="26" cy="23" r="4" fill="#fff"/>
+  <!-- White inner area with grungy painted edges -->
+  <rect x="14" y="14" width="172" height="172" fill="#fff" filter="url(#rough)"/>
 
-  <!-- Left wing — sweeping upward and out -->
-  <path d="M23 30 Q14 24 5 14 Q10 20 16 27 Q19 29 23 31Z" fill="#fff"/>
-  <path d="M23 31 Q12 28 3 26 Q9 28 16 30 Q19 31 23 33Z" fill="#fff" opacity="0.85"/>
-  <path d="M23 33 Q13 34 5 38 Q11 35 17 33 Q20 33 23 34Z" fill="#fff" opacity="0.7"/>
+  <!-- ── BIRD SILHOUETTE ─────────────────────────────── -->
 
-  <!-- Right wing — mirrored -->
-  <path d="M29 30 Q38 24 47 14 Q42 20 36 27 Q33 29 29 31Z" fill="#fff"/>
-  <path d="M29 31 Q40 28 49 26 Q43 28 36 30 Q33 31 29 33Z" fill="#fff" opacity="0.85"/>
-  <path d="M29 33 Q39 34 47 38 Q41 35 35 33 Q32 33 29 34Z" fill="#fff" opacity="0.7"/>
+  <!-- Body -->
+  <ellipse cx="88" cy="128" rx="20" ry="25" fill="#000"/>
+
+  <!-- Neck (long curve up-left from body) -->
+  <path d="M80 108 C76 96 70 86 64 78 C60 72 56 66 58 58 C60 52 66 50 70 54
+           C68 48 72 42 76 46 C74 42 78 38 82 42
+           C80 46 78 54 80 60 C82 54 86 52 88 56
+           C84 62 82 72 84 80 C88 74 92 74 94 78
+           C90 84 86 94 88 104 C90 98 94 96 96 100
+           C92 106 88 114 88 120" stroke="#000" stroke-width="14" fill="none" stroke-linecap="round"/>
+
+  <!-- Head blob -->
+  <ellipse cx="64" cy="56" rx="16" ry="13" fill="#000"/>
+
+  <!-- Beak pointing left -->
+  <path d="M50 52 L22 68 L50 64Z" fill="#000"/>
+
+  <!-- Head crest / tuft -->
+  <path d="M68 44 C66 34 64 26 68 18 C72 26 72 36 68 44Z" fill="#000"/>
+  <path d="M76 42 C76 32 78 24 82 18 C84 26 82 36 76 42Z" fill="#000"/>
+
+  <!-- Wing — dramatic sweep upper-right, multiple feather layers -->
+  <!-- Feather layer 1 (outermost) -->
+  <path d="M98 110 C114 92 134 72 154 52 C168 36 180 22 188 14
+           C178 20 164 36 150 52 C168 30 182 16 190 10
+           C178 14 162 30 146 48Z" fill="#000"/>
+
+  <!-- Feather layer 2 -->
+  <path d="M96 114 C110 98 128 80 146 62 C162 46 176 32 184 22
+           C172 30 158 46 144 62 C160 44 174 28 180 20
+           C166 28 150 46 134 64Z" fill="#000"/>
+
+  <!-- Feather layer 3 -->
+  <path d="M94 118 C106 104 122 88 138 72 C152 58 166 44 174 34
+           C162 44 148 58 134 74 C148 58 160 44 168 36
+           C154 46 138 62 122 80Z" fill="#000"/>
+
+  <!-- Wing base / fill -->
+  <path d="M92 122 C100 110 112 96 126 82 C140 68 154 54 164 44
+           C150 58 136 72 122 88 C108 102 96 116 90 126Z" fill="#000"/>
+
+  <!-- Legs -->
+  <line x1="80" y1="152" x2="74" y2="174" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+  <line x1="96" y1="152" x2="94" y2="174" stroke="#000" stroke-width="5" stroke-linecap="round"/>
+  <!-- Talons -->
+  <line x1="74" y1="174" x2="64" y2="180" stroke="#000" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="74" y1="174" x2="72" y2="182" stroke="#000" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="94" y1="174" x2="84" y2="180" stroke="#000" stroke-width="3.5" stroke-linecap="round"/>
+  <line x1="94" y1="174" x2="92" y2="182" stroke="#000" stroke-width="3.5" stroke-linecap="round"/>
 </svg>

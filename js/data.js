@@ -219,4 +219,16 @@ const VIDEOS = [
 
 const ALL_TAGS = [...new Set(VIDEOS.flatMap(v => v.tags))].sort();
 const ALL_CLIENTS = [...new Set(VIDEOS.map(v => v.client))].sort();
-const ALL_CATEGORIES = [...new Set(VIDEOS.map(v => v.category))].sort();
+// Categories for sidebar filter — combines video categories AND tags for richer filtering
+const ALL_CATEGORIES = [
+  'Commercial',
+  'Brand Launch',
+  'Documentary',
+  'Crowdfunding',
+  'Product Demo',
+  'Travel',
+  'Social Impact',
+  'Lifestyle',
+  'Music',
+  'Anniversary'
+];

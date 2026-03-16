@@ -166,15 +166,26 @@
     document.getElementById('modal-client').textContent = video.client;
     document.getElementById('modal-blurb').textContent = video.blurb;
     document.getElementById('modal-tags').innerHTML = video.tags.map(t => `<span class="tag">${t}</span>`).join('');
-    document.getElementById('modal-iframe').src = getModalEmbedUrl(video);
+
+    // Show poster so the iframe only loads on tap — user gesture unlocks autoplay,
+    // preventing YouTube/Vimeo from showing their overlay UI before playback starts.
+    const wrap = document.getElementById('modal-video-wrap');
+    wrap.innerHTML = `<div class="modal__poster" style="background-image:url('${getThumbImg(video)}')" onclick="startModalVideo('${video.id}')"><div class="modal__poster-play"></div></div>`;
 
     document.getElementById('video-modal').classList.add('active');
     document.body.style.overflow = 'hidden';
   };
 
+  window.startModalVideo = function(id) {
+    const video = VIDEOS.find(v => v.id === id);
+    if (!video) return;
+    const wrap = document.getElementById('modal-video-wrap');
+    wrap.innerHTML = `<iframe frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen src="${getModalEmbedUrl(video)}"></iframe>`;
+  };
+
   window.closeModal = function() {
     document.getElementById('video-modal').classList.remove('active');
-    document.getElementById('modal-iframe').src = '';
+    document.getElementById('modal-video-wrap').innerHTML = '';
     document.body.style.overflow = '';
     state.activeModal = null;
   };

@@ -19,9 +19,9 @@
 
   function getModalEmbedUrl(video) {
     if (video.platform === 'youtube') {
-      return `https://www.youtube.com/embed/${video.videoId}?autoplay=1&rel=0&modestbranding=1`;
+      return `https://www.youtube.com/embed/${video.videoId}?autoplay=1&rel=0&modestbranding=1&controls=0`;
     }
-    return `https://player.vimeo.com/video/${video.videoId}?autoplay=1&color=ffffff&title=0&byline=0&portrait=0`;
+    return `https://player.vimeo.com/video/${video.videoId}?autoplay=1&color=ffffff&title=0&byline=0&portrait=0&controls=0`;
   }
 
   // Static fallback thumbnail

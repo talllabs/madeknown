@@ -1,28 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-  <!-- Outer black square with hand-drawn feel -->
-  <rect x="0" y="0" width="52" height="52" fill="#000" rx="2"/>
+  <!-- Black square -->
+  <rect width="52" height="52" fill="#000"/>
 
-  <!-- Wing feathers left - layered for depth -->
-  <path d="M25 28 C20 24 13 20 6 17 C10 21 15 24 20 27 Z" fill="#fff" opacity="0.9"/>
-  <path d="M24 31 C18 29 11 28 4 27 C8 29 14 31 20 32 Z" fill="#fff"/>
-  <path d="M24 34 C18 35 12 37 6 38 C10 36 16 35 21 34 Z" fill="#fff" opacity="0.85"/>
-  <path d="M25 26 C21 20 16 15 9 11 C13 16 18 20 22 25 Z" fill="#fff" opacity="0.8"/>
-
-  <!-- Wing feathers right - mirrored -->
-  <path d="M27 28 C32 24 39 20 46 17 C42 21 37 24 32 27 Z" fill="#fff" opacity="0.9"/>
-  <path d="M28 31 C34 29 41 28 48 27 C44 29 38 31 32 32 Z" fill="#fff"/>
-  <path d="M28 34 C34 35 40 37 46 38 C42 36 36 35 31 34 Z" fill="#fff" opacity="0.85"/>
-  <path d="M27 26 C31 20 36 15 43 11 C39 16 34 20 30 25 Z" fill="#fff" opacity="0.8"/>
-
-  <!-- Body / figure center -->
-  <path d="M22 38 C22 34 22 30 24 28 C26 30 26 34 30 38 C28 37 26 36 24 37 C23 36 22.5 37 22 38Z" fill="#fff"/>
+  <!-- Figure body -->
+  <rect x="23" y="28" width="6" height="9" rx="1" fill="#fff"/>
 
   <!-- Head -->
-  <ellipse cx="26" cy="22" rx="4" ry="4.5" fill="#fff"/>
+  <circle cx="26" cy="23" r="4" fill="#fff"/>
 
-  <!-- Neck -->
-  <rect x="24.5" y="25.5" width="3" height="3" fill="#fff"/>
+  <!-- Left wing — sweeping upward and out -->
+  <path d="M23 30 Q14 24 5 14 Q10 20 16 27 Q19 29 23 31Z" fill="#fff"/>
+  <path d="M23 31 Q12 28 3 26 Q9 28 16 30 Q19 31 23 33Z" fill="#fff" opacity="0.85"/>
+  <path d="M23 33 Q13 34 5 38 Q11 35 17 33 Q20 33 23 34Z" fill="#fff" opacity="0.7"/>
 
-  <!-- Inner border sketch lines -->
-  <rect x="2" y="2" width="48" height="48" fill="none" stroke="#fff" stroke-width="0.7" opacity="0.2"/>
+  <!-- Right wing — mirrored -->
+  <path d="M29 30 Q38 24 47 14 Q42 20 36 27 Q33 29 29 31Z" fill="#fff"/>
+  <path d="M29 31 Q40 28 49 26 Q43 28 36 30 Q33 31 29 33Z" fill="#fff" opacity="0.85"/>
+  <path d="M29 33 Q39 34 47 38 Q41 35 35 33 Q32 33 29 34Z" fill="#fff" opacity="0.7"/>
 </svg>

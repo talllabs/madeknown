@@ -167,17 +167,17 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
 }
 .hero__slide.active { opacity: 1; }
 
-/* Cinematic people photos from Unsplash (free) */
-/* African farmer in field */
-.hero__slide:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1595552277323-fbc9a3a80113?w=1800&q=80'); background-position: center 30%; }
-/* Filmmaker/videographer on mountain ridge */
-.hero__slide:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1800&q=80'); background-position: center 40%; }
-/* Asian dragon dance street celebration */
-.hero__slide:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1516802273409-68526ee1bdd6?w=1800&q=80'); background-position: center 50%; }
-/* Woman portrait — warm cinematic light */
-.hero__slide:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1800&q=80'); background-position: center 30%; }
-/* Coffee farmer hands with beans */
-.hero__slide:nth-child(5) { background-image: url('https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=1800&q=80'); background-position: center 50%; }
+/* Cinematic people photos */
+/* African farmer — red robe, Kenya */
+.hero__slide:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1504945005722-33670dcaf685?w=1800&q=80'); background-position: center 40%; }
+/* Videographer filming on location */
+.hero__slide:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=1800&q=80'); background-position: center 50%; }
+/* Crowded street festival, Asia */
+.hero__slide:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1800&q=80'); background-position: center 50%; }
+/* Portrait — warm golden light */
+.hero__slide:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=1800&q=80'); background-position: center 25%; }
+/* Coffee farmer, East Africa */
+.hero__slide:nth-child(5) { background-image: url('https://images.unsplash.com/photo-1523574405849-1e8c1b5f3f2d?w=1800&q=80'); background-position: center 50%; }
 
 .hero__overlay {
   position: absolute;

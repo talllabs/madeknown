@@ -730,7 +730,7 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
 }
 .founder:hover { border-color: #aaa; }
 .founder__avatar-inner {
-  width: 56px; height: 56px;
+  width: 120px; height: 120px;
   border-radius: 12px;
   background: var(--black);
   color: #fff;
@@ -738,6 +738,13 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
   font-weight: 700; font-size: 0.95rem;
   letter-spacing: 0.05em;
   flex-shrink: 0;
+  overflow: hidden;
+}
+.founder__avatar-inner img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
 }
 .founder__role {
   font-size: 0.62rem;

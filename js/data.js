@@ -89,7 +89,7 @@ const VIDEOS = [
     client: "Sigmund",
     category: "Commercial",
     tags: ["Commercial", "Lifestyle"],
-    blurb: "A moody brand film capturing the essence of Sigmund — where identity and craftsmanship converge.",
+    blurb: "Launching Sigmund — a global platform supporting entrepreneurs in tourism with free resources and industry opportunities.",
     platform: "vimeo",
     videoId: "561585470",
     featured: false,

@@ -608,6 +608,7 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
 
 /* Overlay with title */
 .video-card__overlay {
+  display: none;
   position: absolute;
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.1) 55%, transparent 100%);
@@ -1121,6 +1122,10 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
   .founders { grid-template-columns: 1fr; }
   .about__awards { grid-template-columns: 1fr; }
   .founder { flex-direction: column; }
+
+  .logo-carousel__inner { max-width: 100%; padding: 0 20px; }
+  .logo-carousel__stage { width: 100%; }
+  .logo-carousel__img { max-height: 70px; max-width: 80%; }
 }
 
 @media (prefers-reduced-motion: reduce) {

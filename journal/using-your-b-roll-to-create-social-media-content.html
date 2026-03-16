@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Using Your B-Roll to Create New Social Media Content — Made Known Pictures Journal">
+  <title>Using Your B-Roll to Create New Social Media Content — Made Known Journal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/main.css">
+  <style>
+    .article-hero {
+      background: #0a0a0a;
+      color: #fff;
+      padding: 120px 0 0;
+    }
+    .article-hero__inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem 60px;
+    }
+    .article-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #888;
+      text-decoration: none;
+      margin-bottom: 2.5rem;
+      transition: color 0.2s;
+    }
+    .article-hero__back:hover { color: #fff; }
+    .article-hero__label {
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 1.25rem;
+    }
+    .article-hero__title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+    .article-hero__meta {
+      font-size: 0.85rem;
+      color: #888;
+    }
+    .article-hero__img {
+      width: 100%;
+      max-height: 520px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .article-body {
+      background: #fff;
+      padding: 80px 0 120px;
+    }
+    .article-body__inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    .article-body__inner p {
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: #333;
+      margin-bottom: 1.5rem;
+    }
+    .article-body__inner h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #111;
+      margin: 3rem 0 1.25rem;
+      line-height: 1.3;
+    }
+    .article-body__inner h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: #111;
+      margin: 2.5rem 0 1rem;
+    }
+    .article-body__inner strong {
+      color: #111;
+      font-weight: 600;
+    }
+    .article-body__inner a {
+      color: #111;
+    }
+    .article-divider {
+      border: none;
+      border-top: 1px solid #e8e8e8;
+      margin: 3rem 0;
+    }
+    .article-intro {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-style: italic;
+      line-height: 1.7;
+      color: #222;
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .article-cta {
+      background: #0a0a0a;
+      color: #fff;
+      border-radius: 4px;
+      padding: 3rem;
+      margin-top: 4rem;
+      text-align: center;
+    }
+    .article-cta h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+    .article-cta p {
+      color: #aaa;
+      font-size: 1rem;
+      margin-bottom: 1.75rem;
+    }
+    .article-cta .btn-cta {
+      display: inline-block;
+      background: #fff;
+      color: #111;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 1rem 2.25rem;
+      border-radius: 2px;
+      transition: background 0.2s, color 0.2s;
+    }
+    .article-cta .btn-cta:hover {
+      background: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="main-nav" class="nav">
+    <div class="nav__inner">
+      <a href="../" class="nav__logo">
+        <img src="../images/de1634c74_logoicon.png" alt="Made Known Pictures Logo" class="nav__logo-img nav__logo-img--dark">
+        <img src="../images/de1634c74_logoicon.png" alt="Made Known Pictures Logo" class="nav__logo-img nav__logo-img--light">
+        <span class="nav__logo-text">MADE KNOWN</span>
+      </a>
+      <ul class="nav__links">
+        <li><a href="../#work">See Our Work</a></li>
+        <li><a href="../#about">Meet the Team</a></li>
+        <li><a href="./" class="active">Journal</a></li>
+        <li><a href="../#contact">Contact</a></li>
+        <li><a href="../#contact" class="nav__cta">Schedule a Call</a></li>
+      </ul>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ARTICLE HERO -->
+  <header class="article-hero">
+    <div class="article-hero__inner">
+      <a href="./" class="article-hero__back">← Journal</a>
+      <div class="article-hero__label">Made Known &nbsp;·&nbsp; Social Media</div>
+      <h1 class="article-hero__title">Using Your B-Roll to Create New Social Media Content</h1>
+      <p class="article-hero__meta">Jan 1, 2026 &nbsp;·&nbsp; By Made Known</p>
+    </div>
+    <img class="article-hero__img"
+      src="https://images.squarespace-cdn.com/content/v1/62201be1032a6e49d325f0d5/1676156361147-0L3KWOCET014PN7C86HS/unsplash-image-7hqEx1al0Fk.jpg"
+      alt="B-roll footage for social media"
+      onerror="this.style.display='none'">
+  </header>
+
+  <!-- ARTICLE BODY -->
+  <article class="article-body">
+    <div class="article-body__inner">
+
+      <p class="article-intro">
+        Using B-roll footage in social media campaigns is a fantastic opportunity to add creativity and diversity to your content, and to share more information about your organization with your current &amp; prospective audience.
+      </p>
+
+      <p>
+        With the help of Made Known Pictures, you can elevate the potential of your B-roll footage by turning it into captivating social media content for organic posts, boosted posts, and online ad campaigns.
+      </p>
+
+      <hr class="article-divider">
+
+      <h2>Organic Posts</h2>
+      <p>
+        Organic posts on social media platforms like Facebook, Instagram, and Twitter provide an excellent way to reach your target audience without spending money on ads. With the help of Made Known Pictures, you can make the most of your organic posts by turning your B-roll footage into short, dynamic videos that captivate and engage your followers.
+      </p>
+      <p>
+        For instance, if you have B-roll footage of your products being made, we can craft a short, time-lapse video that showcases the process in an intriguing and visually appealing manner. We can also add music, text, and other elements to make the video even more dynamic and to emphasize the key features and benefits of your products.
+      </p>
+
+      <hr class="article-divider">
+
+      <h2>Boosted Posts</h2>
+      <p>
+        Boosted posts are similar to organic posts, with the added benefit of being able to reach a broader audience. With boosted posts, you can target your content to specific demographics, interests, and behaviors, reaching the people who are most likely to be interested in your products or services.
+      </p>
+      <p>
+        Made Known Pictures can elevate the potential of your boosted posts by creating short, dynamic videos that are optimized for the platform you're using. For example, if you're boosting a post on Facebook, we can create a video that is optimized for mobile viewing, ensuring that your boosted post reaches the maximum amount of people and that it's captivating and effective.
+      </p>
+
+      <hr class="article-divider">
+
+      <h2>Online Ad Campaigns</h2>
+      <p>
+        Online ad campaigns offer a tremendous opportunity to reach a large audience and drive traffic to your website. With the help of Made Known Pictures, you can turn your B-roll footage into online ad campaigns that are well-designed, captivating, and relevant to your target audience.
+      </p>
+      <p>
+        For instance, if you have B-roll footage of your products in use, we can craft a short video ad that showcases the key features and benefits of your products. We can also add music, text, and other elements to make the ad even more captivating and to highlight the key messages you want to communicate. This type of ad is perfect for online campaigns as it provides valuable information about your brand and products and is captivating and relevant to your target audience.
+      </p>
+      <p>
+        In conclusion, repurposing B-roll footage with the help of Made Known Pictures is an exciting opportunity to elevate your social media content and reach your target audience in a captivating and effective manner. Whether you want to create short, dynamic videos, or longer, more in-depth ads, we have the skills and expertise to help you get the most out of your B-roll footage and make a lasting impact on your followers.
+      </p>
+
+      <hr class="article-divider">
+
+      <h3 style="text-align:center;">How We Work</h3>
+      <p style="text-align:center;">
+        MADE KNOWN collaborates with you to make high-quality posts, boosts, or advertisements to gain followers, increase sign-ups, or generate donations.
+      </p>
+
+      <!-- CTA -->
+      <div class="article-cta">
+        <h3>We'd love to discuss your social media strategy.</h3>
+        <p>Find a time that works for your schedule and let's talk about what your B-roll can do.</p>
+        <a href="https://calendly.com/madeknown" class="btn-cta">Schedule a Call →</a>
+      </div>
+
+    </div>
+  </article>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">
+            <img src="../images/de1634c74_logoicon.png" alt="Made Known Pictures" class="footer__logo-img">
+            <span>MADE KNOWN</span>
+          </div>
+          <p class="footer__tagline">From concept to final frame, we craft videos that tell real human stories and move people to action.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <div class="footer__col-title">Navigate</div>
+            <a href="../#work">Our Work</a>
+            <a href="../#about">About</a>
+            <a href="./">Journal</a>
+            <a href="../#contact">Contact</a>
+          </div>
+          <div class="footer__col">
+            <div class="footer__col-title">Services</div>
+            <a href="../#contact">Commercials</a>
+            <a href="../#contact">Documentaries</a>
+            <a href="../#contact">Branded Content</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Made Known Pictures. Founded by Scott Blanding &amp; Brad LaBriola.</p>
+        <p>Los Angeles, CA · Est. 2007</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('nav-toggle')?.addEventListener('click', () => {
+      document.getElementById('main-nav').classList.toggle('mobile-open');
+    });
+  </script>
+</body>
+</html>

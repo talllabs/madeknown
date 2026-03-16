@@ -827,6 +827,24 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
 }
 .contact__title em { font-style: italic; }
 .contact__sub { font-size: 0.95rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 32px; }
+.calendly-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: var(--black);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  margin-bottom: 32px;
+  transition: background var(--trans), transform var(--trans);
+}
+.calendly-btn:hover { background: var(--dark); transform: translateY(-1px); }
+.calendly-btn svg { width: 16px; height: 16px; }
+
 .contact__detail {
   display: flex; align-items: center; gap: 10px;
   font-size: 0.88rem; color: var(--text-muted);

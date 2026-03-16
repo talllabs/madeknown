@@ -70,15 +70,13 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
    NAV — white, clean
    ═══════════════════════════════════════════════════════════════ */
 .nav {
-  position: fixed;
+  position: sticky;
   top: 0; left: 0; right: 0;
   z-index: 1000;
   height: var(--nav-h);
   background: #fff;
   border-bottom: 1px solid var(--border);
-  transition: transform var(--trans);
 }
-.nav.nav-hidden { transform: translateY(-100%); }
 
 .nav__inner {
   max-width: 1280px;
@@ -93,27 +91,23 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
 .nav__logo {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   font-weight: 700;
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
+  font-size: 0.88rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--black);
+  text-decoration: none;
 }
-.nav__logo-icon {
-  width: 38px;
-  height: 38px;
-  border: 2px solid var(--black);
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: 1rem;
-  font-style: italic;
+.nav__logo-img {
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
 }
+/* On white nav show dark logo, hide light */
+.nav__logo-img--light { display: none; }
+.nav__logo-img--dark  { display: block; }
+.nav__logo-text { letter-spacing: 0.16em; }
 
 .nav__links {
   display: flex;
@@ -154,10 +148,9 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
    ═══════════════════════════════════════════════════════════════ */
 .hero {
   position: relative;
-  height: 100vh;
-  min-height: 600px;
+  height: calc(100vh - var(--nav-h));
+  min-height: 560px;
   overflow: hidden;
-  margin-top: var(--nav-h);
 }
 
 .hero__slides {
@@ -174,12 +167,17 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
 }
 .hero__slide.active { opacity: 1; }
 
-/* Cinematic landscape images from Unsplash (free) */
-.hero__slide:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1800&q=80'); }
-.hero__slide:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1800&q=80'); }
-.hero__slide:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1501854140801-50d01698950b?w=1800&q=80'); }
-.hero__slide:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=1800&q=80'); }
-.hero__slide:nth-child(5) { background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1800&q=80'); }
+/* Cinematic people photos from Unsplash (free) */
+/* African farmer in field */
+.hero__slide:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1595552277323-fbc9a3a80113?w=1800&q=80'); background-position: center 30%; }
+/* Filmmaker/videographer on mountain ridge */
+.hero__slide:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=1800&q=80'); background-position: center 40%; }
+/* Asian dragon dance street celebration */
+.hero__slide:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1516802273409-68526ee1bdd6?w=1800&q=80'); background-position: center 50%; }
+/* Woman portrait — warm cinematic light */
+.hero__slide:nth-child(4) { background-image: url('https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1800&q=80'); background-position: center 30%; }
+/* Coffee farmer hands with beans */
+.hero__slide:nth-child(5) { background-image: url('https://images.unsplash.com/photo-1611284446314-60a58ac0deb9?w=1800&q=80'); background-position: center 50%; }
 
 .hero__overlay {
   position: absolute;
@@ -905,17 +903,13 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
   gap: 40px; margin-bottom: 40px; flex-wrap: wrap;
 }
 .footer__logo {
-  display: flex; align-items: center; gap: 10px;
+  display: flex; align-items: center; gap: 12px;
   font-weight: 700; font-size: 0.82rem;
-  letter-spacing: 0.12em; text-transform: uppercase;
+  letter-spacing: 0.16em; text-transform: uppercase;
   color: #fff; margin-bottom: 14px;
 }
-.footer__logo-icon {
-  width: 34px; height: 34px;
-  border: 2px solid #fff; border-radius: 4px;
-  display: flex; align-items: center; justify-content: center;
-  font-family: var(--font-serif); font-weight: 700; font-style: italic;
-  font-size: 0.9rem; flex-shrink: 0;
+.footer__logo-img {
+  width: 40px; height: 40px; flex-shrink: 0;
 }
 .footer__tagline { font-size: 0.82rem; color: #555; max-width: 300px; line-height: 1.7; }
 .footer__links { display: flex; gap: 48px; }

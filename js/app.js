@@ -214,14 +214,6 @@
   // ─── Nav scroll behavior ──────────────────────────────────────────────────
   function initNav() {
     const nav = document.getElementById('main-nav');
-    let lastY = 0;
-
-    window.addEventListener('scroll', () => {
-      const y = window.scrollY;
-      if (y > lastY && y > 300) nav.classList.add('nav-hidden');
-      else nav.classList.remove('nav-hidden');
-      lastY = y;
-    });
 
     document.getElementById('nav-toggle')?.addEventListener('click', () => {
       nav.classList.toggle('mobile-open');

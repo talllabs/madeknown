@@ -120,11 +120,6 @@
               <div class="video-card__cat">${video.category} // ${video.tags[1] || video.tags[0]}</div>
               <div class="video-card__title-overlay">${video.title}</div>
             </div>
-            <div class="video-card__play">
-              <div class="play-circle">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-            </div>
           </div>
           <div class="video-card__body">
             <div class="video-card__client-label">Client</div>
@@ -321,17 +316,6 @@
   }
 
   // ─── Logo carousel ────────────────────────────────────────────────────────
-  function initLogoCarousel() {
-    const imgs = document.querySelectorAll('.logo-carousel__img');
-    if (!imgs.length) return;
-    let current = 0;
-    setInterval(() => {
-      imgs[current].classList.remove('active');
-      current = (current + 1) % imgs.length;
-      imgs[current].classList.add('active');
-    }, 4000);
-  }
-
   // ─── Init ─────────────────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
     // Search
@@ -359,6 +343,5 @@
     initReveal();
     initStats();
     initContactForm();
-    initLogoCarousel();
   });
 })();

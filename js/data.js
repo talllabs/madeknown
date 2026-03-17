@@ -14,7 +14,7 @@ const VIDEOS = [
   {
     id: 2,
     title: "AHD Cotopaxi",
-    client: "Cotopaxi",
+    client: "Andean Health",
     category: "Documentary",
     tags: ["Documentary", "Social Impact"],
     blurb: "A powerful documentary following Andean communities and the mission-driven work of AHD at the base of Cotopaxi volcano.",
@@ -50,7 +50,7 @@ const VIDEOS = [
   {
     id: 5,
     title: "Coffee Is Life",
-    client: "Made Known Original",
+    client: "LWR",
     category: "Commercial",
     tags: ["Commercial", "Lifestyle"],
     blurb: "Lifestyle commercial centered on coffee culture and the ritual of daily coffee consumption — a love letter to the morning cup.",
@@ -61,7 +61,7 @@ const VIDEOS = [
   },
   {
     id: 6,
-    title: "Stone & Cloth Kickstarter",
+    title: "Kickstarter Video",
     client: "Stone & Cloth",
     category: "Brand Launch",
     tags: ["Brand Launch", "Crowdfunding"],
@@ -74,7 +74,7 @@ const VIDEOS = [
   {
     id: 7,
     title: "Coffee Farming in Kenya",
-    client: "Documentary",
+    client: "LWR",
     category: "Documentary",
     tags: ["Documentary", "Social Impact"],
     blurb: "Documentary-style piece showing the coffee farming process and community stories in Kenya — from seed to cup.",
@@ -85,8 +85,8 @@ const VIDEOS = [
   },
   {
     id: 8,
-    title: "Sigmund",
-    client: "Sigmund",
+    title: "Introducing Sigmund",
+    client: "The Sigmund Project",
     category: "Commercial",
     tags: ["Commercial", "Lifestyle"],
     blurb: "Launching Sigmund — a global platform supporting entrepreneurs in tourism with free resources and industry opportunities.",
@@ -98,7 +98,7 @@ const VIDEOS = [
   {
     id: 9,
     title: "Coffee Couple",
-    client: "Documentary",
+    client: "LWR",
     category: "Documentary",
     tags: ["Documentary", "Lifestyle"],
     blurb: "An intimate documentary portrait of a couple bound together by their shared passion for coffee and craft.",
@@ -109,7 +109,7 @@ const VIDEOS = [
   },
   {
     id: 10,
-    title: "Andean Health: What We Do",
+    title: "What We Do Everyday",
     client: "Andean Health",
     category: "Documentary",
     tags: ["Documentary", "Social Impact"],
@@ -121,8 +121,8 @@ const VIDEOS = [
   },
   {
     id: 11,
-    title: "Papua New Guinea",
-    client: "LWR",
+    title: "Profile: Fabian Paino",
+    client: "Tourism Papua New Guinea",
     category: "Documentary",
     tags: ["Documentary", "Travel"],
     blurb: "A vivid documentary journey into Papua New Guinea — capturing culture, landscape, and lives rarely seen by the world.",
@@ -133,7 +133,7 @@ const VIDEOS = [
   },
   {
     id: 12,
-    title: "Novo",
+    title: "Rolling Out The New Brand",
     client: "Novo",
     category: "Commercial",
     tags: ["Commercial", "Brand Launch"],
@@ -169,10 +169,10 @@ const VIDEOS = [
   },
   {
     id: 15,
-    title: "PNG Media Lunch",
-    client: "PNG Media",
+    title: "NYC Media Lunch",
+    client: "Tourism Papua New Guinea",
     category: "Documentary",
-    tags: ["Documentary", "Social Impact"],
+    tags: ["Documentary", "Event Video"],
     blurb: "Behind-the-scenes documentary capturing the power of storytelling and media in Papua New Guinea.",
     platform: "vimeo",
     videoId: "132164108",
@@ -181,8 +181,8 @@ const VIDEOS = [
   },
   {
     id: 16,
-    title: "Galapagos",
-    client: "Documentary",
+    title: "Welcome To The Galapagos",
+    client: "Galapagos Conservancy",
     category: "Documentary",
     tags: ["Documentary", "Travel"],
     blurb: "A breathtaking documentary immersion into the Galapagos Islands — wildlife, wonder, and the fragile beauty of our world.",
@@ -193,7 +193,7 @@ const VIDEOS = [
   },
   {
     id: 17,
-    title: "LWR Champa — India",
+    title: "Champa",
     client: "LWR",
     category: "Documentary",
     tags: ["Documentary", "Social Impact"],
@@ -206,7 +206,7 @@ const VIDEOS = [
   {
     id: 18,
     title: "Live Recording",
-    client: "Live Recording",
+    client: "The Collection",
     category: "Commercial",
     tags: ["Commercial", "Music"],
     blurb: "A kinetic live recording capture — raw energy, real artistry, and the electricity of performance preserved on film.",
@@ -225,6 +225,7 @@ const ALL_CATEGORIES = [
   'Brand Launch',
   'Documentary',
   'Crowdfunding',
+  'Event Video',
   'Product Demo',
   'Travel',
   'Social Impact',

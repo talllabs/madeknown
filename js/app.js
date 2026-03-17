@@ -19,9 +19,9 @@
 
   function getModalEmbedUrl(video) {
     if (video.platform === 'youtube') {
-      return `https://www.youtube.com/embed/${video.videoId}?autoplay=1&rel=0&modestbranding=1`;
+      return `https://www.youtube.com/embed/${video.videoId}?autoplay=1&rel=0&modestbranding=1&controls=0`;
     }
-    return `https://player.vimeo.com/video/${video.videoId}?autoplay=1&color=ffffff&title=0&byline=0&portrait=0`;
+    return `https://player.vimeo.com/video/${video.videoId}?autoplay=1&color=ffffff&title=0&byline=0&portrait=0&controls=0`;
   }
 
   // Static fallback thumbnail
@@ -120,11 +120,6 @@
               <div class="video-card__cat">${video.category} // ${video.tags[1] || video.tags[0]}</div>
               <div class="video-card__title-overlay">${video.title}</div>
             </div>
-            <div class="video-card__play">
-              <div class="play-circle">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-              </div>
-            </div>
           </div>
           <div class="video-card__body">
             <div class="video-card__client-label">Client</div>
@@ -166,15 +161,26 @@
     document.getElementById('modal-client').textContent = video.client;
     document.getElementById('modal-blurb').textContent = video.blurb;
     document.getElementById('modal-tags').innerHTML = video.tags.map(t => `<span class="tag">${t}</span>`).join('');
-    document.getElementById('modal-iframe').src = getModalEmbedUrl(video);
+
+    // Show poster so the iframe only loads on tap — user gesture unlocks autoplay,
+    // preventing YouTube/Vimeo from showing their overlay UI before playback starts.
+    const wrap = document.getElementById('modal-video-wrap');
+    wrap.innerHTML = `<div class="modal__poster" style="background-image:url('${getThumbImg(video)}')" onclick="startModalVideo('${video.id}')"><div class="modal__poster-play"></div></div>`;
 
     document.getElementById('video-modal').classList.add('active');
     document.body.style.overflow = 'hidden';
   };
 
+  window.startModalVideo = function(id) {
+    const video = VIDEOS.find(v => v.id === id);
+    if (!video) return;
+    const wrap = document.getElementById('modal-video-wrap');
+    wrap.innerHTML = `<iframe frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen src="${getModalEmbedUrl(video)}"></iframe>`;
+  };
+
   window.closeModal = function() {
     document.getElementById('video-modal').classList.remove('active');
-    document.getElementById('modal-iframe').src = '';
+    document.getElementById('modal-video-wrap').innerHTML = '';
     document.body.style.overflow = '';
     state.activeModal = null;
   };
@@ -310,17 +316,6 @@
   }
 
   // ─── Logo carousel ────────────────────────────────────────────────────────
-  function initLogoCarousel() {
-    const imgs = document.querySelectorAll('.logo-carousel__img');
-    if (!imgs.length) return;
-    let current = 0;
-    setInterval(() => {
-      imgs[current].classList.remove('active');
-      current = (current + 1) % imgs.length;
-      imgs[current].classList.add('active');
-    }, 4000);
-  }
-
   // ─── Init ─────────────────────────────────────────────────────────────────
   document.addEventListener('DOMContentLoaded', () => {
     // Search
@@ -348,6 +343,5 @@
     initReveal();
     initStats();
     initContactForm();
-    initLogoCarousel();
   });
 })();

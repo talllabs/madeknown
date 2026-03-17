@@ -295,9 +295,9 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
   border-bottom: 1px solid var(--border);
 }
 .logo-carousel__inner {
-  max-width: 960px;
+  width: 80%;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 48px;
   text-align: center;
 }
 .logo-carousel__label {
@@ -306,25 +306,25 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--text-light);
-  margin-bottom: 36px;
+  margin-bottom: 28px;
 }
 .logo-carousel__stage {
+  position: relative;
+  height: 120px;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 48px 64px;
 }
 .logo-carousel__img {
-  max-height: 52px;
-  max-width: 160px;
+  position: absolute;
+  max-height: 100px;
+  max-width: 80%;
   width: auto;
   object-fit: contain;
-  opacity: 0.55;
-  transition: opacity 0.2s ease;
-  filter: grayscale(1);
+  opacity: 0;
+  transition: opacity 0.7s ease;
 }
-.logo-carousel__img:hover { opacity: 0.85; }
+.logo-carousel__img.active { opacity: 1; }
 
 /* ═══════════════════════════════════════════════════════════════
    ABOUT — section photo
@@ -1119,9 +1119,9 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
   .about__awards { grid-template-columns: 1fr; }
   .founder { flex-direction: column; }
 
-  .logo-carousel__inner { max-width: 100%; padding: 0 20px; }
-  .logo-carousel__stage { gap: 28px 36px; }
-  .logo-carousel__img { max-height: 36px; max-width: 110px; }
+  .logo-carousel__inner { width: 90%; }
+  .logo-carousel__stage { height: 90px; }
+  .logo-carousel__img { max-height: 70px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -125,7 +125,7 @@ const VIDEOS = [
     client: "Tourism Papua New Guinea",
     category: "Documentary",
     tags: ["Documentary", "Travel"],
-    blurb: "A vivid documentary journey into Papua New Guinea — capturing culture, landscape, and lives rarely seen by the world.",
+    blurb: "A documentary portrait of Fabian Paino experiencing America for the first time — told through the eyes of someone seeing it all fresh from Papua New Guinea.",
     platform: "vimeo",
     videoId: "109343274",
     featured: false,

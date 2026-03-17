@@ -173,7 +173,7 @@ const VIDEOS = [
     client: "Tourism Papua New Guinea",
     category: "Documentary",
     tags: ["Documentary", "Event Video"],
-    blurb: "Behind-the-scenes documentary capturing the power of storytelling and media in Papua New Guinea.",
+    blurb: "Event video following the Papua New Guinea Tourism Board to NYC where they hosted a media lunch at the famed Explorers Club.",
     platform: "vimeo",
     videoId: "132164108",
     featured: false,

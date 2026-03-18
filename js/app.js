@@ -165,7 +165,7 @@
     // Show poster so the iframe only loads on tap — user gesture unlocks autoplay,
     // preventing YouTube/Vimeo from showing their overlay UI before playback starts.
     const wrap = document.getElementById('modal-video-wrap');
-    wrap.innerHTML = `<div class="modal__poster" style="background-image:url('${getThumbImg(video)}')" onclick="startModalVideo('${video.id}')"><div class="modal__poster-play"></div></div>`;
+    wrap.innerHTML = `<div class="modal__poster" style="background-image:url('${getThumbImg(video)}')" onclick="startModalVideo(${video.id})"><div class="modal__poster-play"></div></div>`;
 
     document.getElementById('video-modal').classList.add('active');
     document.body.style.overflow = 'hidden';

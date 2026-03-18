@@ -99,23 +99,12 @@
     }
 
     grid.innerHTML = filtered.map(video => {
-      const thumbEmbed = getThumbEmbedUrl(video);
       const thumbImg = getThumbImg(video);
       return `
         <article class="video-card" data-id="${video.id}" onclick="openModal(${video.id})">
           <div class="video-card__thumb">
-            <!-- Static img shown first, hidden once iframe loads -->
             <img class="thumb-img" src="${thumbImg}" alt="${video.title}"
               onerror="this.style.display='none'">
-            <iframe
-              src="${thumbEmbed}"
-              frameborder="0"
-              allow="autoplay; fullscreen"
-              allowfullscreen
-              loading="lazy"
-              title="${video.title} preview"
-              onload="this.previousElementSibling.classList.add('hidden')">
-            </iframe>
             <div class="video-card__overlay">
               <div class="video-card__cat">${video.category} // ${video.tags[1] || video.tags[0]}</div>
               <div class="video-card__title-overlay">${video.title}</div>

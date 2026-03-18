@@ -295,8 +295,8 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
   border-bottom: 1px solid var(--border);
 }
 .logo-carousel__inner {
-  width: 80%;
-  max-width: 1200px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
 }
@@ -1119,7 +1119,7 @@ select, input, textarea { font: inherit; color: inherit; background: none; borde
   .about__awards { grid-template-columns: 1fr; }
   .founder { flex-direction: column; }
 
-  .logo-carousel__inner { width: 90%; }
+  .logo-carousel__inner { width: 100%; }
   .logo-carousel__stage { height: 90px; }
   .logo-carousel__img { max-height: 70px; }
 }

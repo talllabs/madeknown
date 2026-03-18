@@ -104,17 +104,16 @@
       return `
         <article class="video-card" data-id="${video.id}" onclick="openModal(${video.id})">
           <div class="video-card__thumb">
-            <!-- Static img shown first, hidden once iframe loads -->
             <img class="thumb-img" src="${thumbImg}" alt="${video.title}"
-              onerror="this.style.display='none'">
+              onerror="this.style.display='none'" style="transition:opacity 0.5s">
             <iframe
               src="${thumbEmbed}"
               frameborder="0"
               allow="autoplay; fullscreen"
               allowfullscreen
               loading="lazy"
-              title="${video.title} preview"
-              onload="this.previousElementSibling.classList.add('hidden')">
+              style="opacity:0;transition:opacity 0.5s"
+              onload="setTimeout(()=>{this.style.opacity=1;this.previousElementSibling.style.opacity=0},1500)">
             </iframe>
             <div class="video-card__overlay">
               <div class="video-card__cat">${video.category} // ${video.tags[1] || video.tags[0]}</div>

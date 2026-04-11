@@ -4,96 +4,176 @@
   <meta charset="UTF-8">
   <title>Made Known | FCC Video Production Proposal</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts to match Made Known aesthetic -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
     body {
       margin: 0;
       font-family: 'Inter', Arial, sans-serif;
       color: #1a1a1a;
-      background-color: #f5f5f5;
+      background-color: #f4f4f4;
+      line-height: 1.6;
     }
+
+    /* Header */
     .header {
+      background: #ffffff;
+      border-bottom: 1px solid #e5e5e5;
+      padding: 24px 60px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 24px 60px;
-      background-color: #ffffff;
-      border-bottom: 1px solid #e6e6e6;
     }
+
     .logo {
       font-weight: 600;
-      letter-spacing: 2px;
+      letter-spacing: 3px;
       font-size: 14px;
     }
+
+    /* Hero Section */
     .hero {
       background: #d9d9d9;
-      padding: 120px 60px;
-      text-align: left;
+      padding: 140px 60px;
+      color: #ffffff;
     }
+
     .hero h1 {
       font-family: 'Playfair Display', serif;
       font-size: 64px;
       font-weight: 400;
-      line-height: 1.1;
-      margin: 0 0 20px 0;
-      color: #ffffff;
+      margin: 0 0 10px 0;
     }
-    .hero p {
-      font-size: 18px;
-      color: #f0f0f0;
-      max-width: 600px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 80px 40px;
-      background-color: #ffffff;
-    }
-    .date {
-      font-size: 14px;
-      color: #777;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 40px;
-    }
-    h2 {
+
+    .hero h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 36px;
+      font-size: 28px;
       font-weight: 400;
-      margin-bottom: 10px;
+      margin: 0;
+      opacity: 0.9;
     }
-    .subtitle {
-      font-size: 16px;
-      color: #666;
+
+    /* Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 80px 40px;
+    }
+
+    .date {
+      text-transform: uppercase;
+      font-size: 13px;
+      letter-spacing: 1px;
+      color: #777;
       margin-bottom: 40px;
     }
-    .letter p {
-      font-size: 17px;
-      line-height: 1.7;
-      margin-bottom: 22px;
-      color: #333;
+
+    h3.section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 400;
+      margin-top: 80px;
+      margin-bottom: 20px;
     }
-    .bullet-points {
-      margin: 30px 0;
+
+    p {
+      font-size: 17px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      margin: 20px 0;
       padding-left: 20px;
     }
-    .bullet-points li {
+
+    ul li {
       margin-bottom: 10px;
-      font-size: 16px;
     }
+
     .signature {
-      margin-top: 50px;
-      font-size: 16px;
+      margin-top: 40px;
     }
+
+    /* Team Section */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .team-member {
+      background: #fafafa;
+      padding: 20px;
+      border: 1px solid #eeeeee;
+    }
+
+    .team-member h4 {
+      margin: 0 0 5px 0;
+      font-size: 18px;
+    }
+
+    .team-member span {
+      font-size: 14px;
+      color: #777;
+    }
+
+    /* Video Section */
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 50px;
+      margin-top: 40px;
+    }
+
+    .video-item iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+    }
+
+    .video-item h4 {
+      margin-top: 15px;
+      font-size: 18px;
+    }
+
+    .video-item p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    /* Footer */
     .footer {
       text-align: center;
       padding: 40px 20px;
       font-size: 14px;
       color: #777;
+      background: #ffffff;
+      border-top: 1px solid #e5e5e5;
     }
+
     a {
       color: #000;
       text-decoration: none;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 100px 30px;
+      }
+      .hero h1 {
+        font-size: 42px;
+      }
+      .container {
+        padding: 60px 20px;
+      }
+      .video-item iframe {
+        height: 280px;
+      }
     }
   </style>
 </head>
@@ -104,72 +184,126 @@
     <div class="logo">MADE KNOWN</div>
   </div>
 
-  <!-- Hero Section -->
-  <div class="hero">
-    <h1>Proposal in Response to RFP No. PS25-RN-097</h1>
-    <p>Video Production Services — Let’s Grow Canada</p>
-  </div>
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Video Production Services Proposal</h1>
+    <h2>Farm Credit Canada — Let’s Grow Canada</h2>
+  </section>
 
   <!-- Main Content -->
   <div class="container">
+
+    <!-- Cover Letter -->
     <div class="date">May 8, 2026</div>
 
-    <h2>Cover Letter</h2>
-    <div class="subtitle">Submitted to Farm Credit Canada</div>
+    <p><strong>Ronke Niagwan</strong><br>
+    Strategic Sourcing Specialist<br>
+    Farm Credit Canada (FCC)<br>
+    1800 Hamilton Street, P.O. Box 4320<br>
+    Regina, SK S4P 4L3<br>
+    <a href="mailto:procurement@fcc.ca">procurement@fcc.ca</a></p>
 
-    <div class="letter">
-      <p><strong>Ronke Niagwan</strong><br>
-      Strategic Sourcing Specialist<br>
-      Farm Credit Canada (FCC)<br>
-      1800 Hamilton Street, P.O. Box 4320<br>
-      Regina, SK S4P 4L3<br>
-      <a href="mailto:procurement@fcc.ca">procurement@fcc.ca</a></p>
+    <p>Dear Ms. Niagwan and the FCC Procurement Team,</p>
 
-      <p>Dear Ms. Niagwan and the FCC Procurement Team,</p>
+    <p>
+      Made Known Pictures is pleased to submit this proposal in response to RFP No. PS25-RN-097 for
+      Video Production Services supporting FCC’s <em>Let’s Grow Canada / On sort du rang</em> initiative.
+    </p>
 
-      <p>
-        Made Known Pictures is pleased to submit this proposal in response to RFP No. PS25-RN-097 for
-        Video Production Services in support of FCC’s <em>Let’s Grow Canada / On sort du rang</em> initiative.
-      </p>
+    <p>
+      We specialize in creating clear, human, and story-driven video content for organizations operating
+      in complex, real-world industries. FCC’s mandate aligns directly with the type of storytelling we
+      deliver: authentic, field-based, and built to connect with real audiences.
+    </p>
 
-      <p>
-        We specialize in creating clear, human, and story-driven video content for organizations operating
-        in complex, real-world industries. FCC’s mandate—supporting Canadian agriculture and food through
-        knowledge, relationships, and expertise—aligns directly with the type of storytelling we deliver:
-        authentic, field-based, and built to connect with real audiences.
-      </p>
+    <p>
+      Our scalable, Canada-wide production approach combines centralized creative direction with regional
+      crews to ensure consistent quality, cost efficiency, and responsiveness.
+    </p>
 
-      <p>
-        We understand this opportunity is not a one-time project, but a long-term partnership supported
-        through Statements of Work. Our model is designed specifically for this structure. Made Known
-        operates with a scalable, Canada-wide production approach—combining centralized creative direction
-        with regional crews—to deliver consistent quality, reduce travel costs, and respond quickly to
-        evolving needs.
-      </p>
+    <ul>
+      <li>Nimble production model capable of handling multiple assignments simultaneously</li>
+      <li>Authentic storytelling featuring real people and environments</li>
+      <li>Modular content approach maximizing output from every shoot</li>
+      <li>Reliable turnaround times, including fast-turn edits</li>
+    </ul>
 
-      <ul class="bullet-points">
-        <li>A nimble production model capable of handling multiple assignments simultaneously</li>
-        <li>Strong experience capturing real people and real environments with authenticity</li>
-        <li>A modular content approach that maximizes output from every shoot</li>
-        <li>Reliable turnaround times, including fast-turn edits when required</li>
-      </ul>
+    <p>
+      Our goal is to be an easy, dependable partner for FCC—one that can take a brief, execute efficiently,
+      and deliver content that is both practical and impactful across multiple channels.
+    </p>
 
-      <p>
-        Our goal is to be an easy, dependable partner for FCC—one that can take a brief, execute efficiently,
-        and deliver content that is both practical and impactful across multiple channels.
-      </p>
+    <p class="signature">
+      Respectfully submitted,<br><br>
+      <strong>Made Known Pictures</strong><br>
+      <a href="https://madeknown.com" target="_blank">https://madeknown.com</a>
+    </p>
 
-      <p class="signature">
-        Respectfully submitted,<br><br>
-        <strong>Made Known Pictures</strong><br>
-        <a href="https://madeknown.com" target="_blank">https://madeknown.com</a>
-      </p>
+    <!-- Team Section -->
+    <h3 class="section-title">Our Team</h3>
+    <div class="team-grid">
+      <div class="team-member">
+        <h4>Brad LaBriola</h4>
+        <span>Producer, Writer, Editor</span>
+        <p>UCLA-trained producer with global experience delivering institutional and documentary storytelling.</p>
+      </div>
+      <div class="team-member">
+        <h4>Scott Blanding</h4>
+        <span>Director of Photography, Director</span>
+        <p>Award-winning documentary filmmaker specializing in human-centered storytelling in real-world environments.</p>
+      </div>
+      <div class="team-member">
+        <h4>Ally LaBriola</h4>
+        <span>Marketing Strategy & AI Integration</span>
+        <p>Leads strategic positioning and digital distribution to maximize the impact of each video asset.</p>
+      </div>
+      <div class="team-member">
+        <h4>Mitch Beattie</h4>
+        <span>Production Lead</span>
+        <p>Founder of Beattie Film with extensive experience delivering documentary and branded content across Canada.</p>
+      </div>
+      <div class="team-member">
+        <h4>Tara [Last Name]</h4>
+        <span>Brand & Content Strategy</span>
+        <p>Founder of Liminal Brand Lab specializing in community-led growth and cultural storytelling.</p>
+      </div>
     </div>
+
+    <!-- Work Samples -->
+    <h3 class="section-title">Selected Work</h3>
+    <div class="video-grid">
+
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/2QvpjRLXZu8" allowfullscreen></iframe>
+        <h4>The Sigmund Project – Platform Launch</h4>
+        <p>Full-service production including concept, filming, editing, and graphics for an international tourism platform.</p>
+      </div>
+
+      <div class="video-item">
+        <iframe src="https://player.vimeo.com/video/132164108" allowfullscreen></iframe>
+        <h4>Papua New Guinea Tourism Board – New York Event</h4>
+        <p>On-site interviews and event storytelling highlighting international tourism promotion.</p>
+      </div>
+
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/B3wrnDvipnE" allowfullscreen></iframe>
+        <h4>Andean Health & Development</h4>
+        <p>Documentary-style storytelling communicating the impact of healthcare infrastructure in rural communities.</p>
+      </div>
+
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/BWlgBhgephY" allowfullscreen></iframe>
+        <h4>CropLife America</h4>
+        <p>Educational and promotional content translating complex agricultural systems into engaging narratives.</p>
+      </div>
+
+    </div>
+
   </div>
 
   <!-- Footer -->
   <div class="footer">
-    Made Known Pictures © 2026
+    Made Known Pictures © 2026 • <a href="https://madeknown.com" target="_blank">https://madeknown.com</a>
   </div>
 
 </body>

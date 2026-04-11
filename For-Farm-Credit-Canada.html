@@ -38,13 +38,13 @@
       left: 40px;
       font-size: 16px;
       font-weight: 600;
-      color: white;
+      color: #ffffff;
       letter-spacing: 2px;
       z-index: 2;
     }
 
     .container {
-      max-width: 1100px;
+      max-width: 1000px;
       margin: -80px auto 0 auto;
       background: #ffffff;
       padding: 100px 40px 80px 40px;
@@ -64,12 +64,12 @@
       font-family: 'Playfair Display', serif;
       font-size: 46px;
       font-weight: 400;
-      margin-bottom: 10px;
+      margin: 0 0 10px 0;
     }
 
     h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 26px;
+      font-size: 24px;
       font-weight: 400;
       color: #555;
       margin-top: 0;
@@ -81,7 +81,6 @@
       font-weight: 400;
       margin-top: 80px;
       margin-bottom: 20px;
-      text-align: center;
     }
 
     p {
@@ -103,12 +102,6 @@
       border: 1px solid #eeeeee;
       border-radius: 6px;
       text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .team-member:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
 
     .team-member img {
@@ -127,6 +120,7 @@
     .team-member .role {
       font-size: 14px;
       color: #555;
+      margin-bottom: 4px;
     }
 
     .team-member .location {
@@ -149,46 +143,22 @@
       font-size: 22px;
     }
 
-    /* Video Grid */
-    .video-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .video-item iframe {
-      width: 100%;
-      height: 200px;
-      border-radius: 8px;
-      border: none;
-    }
-
-    .video-item h4 {
-      margin-top: 12px;
-      font-size: 18px;
-    }
-
-    .video-item p {
-      font-size: 15px;
-      color: #666;
-    }
-
     /* Map Section */
     .team-map {
       text-align: center;
-      margin-top: 60px;
+      margin-top: 80px;
     }
 
     .map-container {
       position: relative;
-      max-width: 1000px;
-      margin: 30px auto;
+      max-width: 900px;
+      margin: 40px auto 0 auto;
     }
 
     .base-map {
       width: 100%;
       border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
     }
 
     .map-marker {
@@ -198,29 +168,52 @@
     }
 
     .map-marker img {
-      width: 55px;
-      height: 55px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
       border: 3px solid #ffffff;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+      background: #fff;
     }
 
     .map-marker span {
       display: block;
-      margin-top: 6px;
-      font-size: 12px;
+      margin-top: 8px;
+      font-size: 13px;
       font-weight: 600;
       background: rgba(255,255,255,0.95);
-      padding: 3px 6px;
-      border-radius: 6px;
+      padding: 4px 10px;
+      border-radius: 8px;
+      white-space: nowrap;
     }
 
     /* Marker Positions */
-    .philly { top: 60%; left: 72%; }
-    .ottawa1 { top: 42%; left: 63%; }
-    .ottawa2 { top: 45%; left: 60%; }
-    .ottawa3 { top: 48%; left: 66%; }
-    .ottawa4 { top: 40%; left: 66%; }
+    .philly  { top: 63%; left: 74%; }
+    .philly2 { top: 68%; left: 70%; }
+    .losangeles { top: 60%; left: 22%; }
+    .ottawa1 { top: 45%; left: 63%; }
+    .ottawa2 { top: 49%; left: 67%; }
+
+    /* Video Grid */
+    .video-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      margin-top: 40px;
+    }
+
+    .video-item iframe {
+      width: 100%;
+      height: 420px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    .video-item h4 {
+      margin-top: 12px;
+      font-size: 18px;
+      font-weight: 600;
+    }
 
     .footer {
       text-align: center;
@@ -238,11 +231,18 @@
     }
 
     @media (max-width: 768px) {
+      .video-item iframe {
+        height: 260px;
+      }
+      .map-marker img {
+        width: 44px;
+        height: 44px;
+      }
+      .map-marker span {
+        font-size: 11px;
+      }
       .container {
         padding: 80px 20px 40px 20px;
-      }
-      .video-item iframe {
-        height: 180px;
       }
     }
   </style>
@@ -299,11 +299,11 @@
       </div>
 
       <div class="team-member">
-  <img src="https://www.madeknown.com/images/scott.png" alt="Scott Blanding">
-  <h4>Scott Blanding</h4>
-  <div class="role">Director of Photography, Director</div>
-  <div class="location">Los Angeles, CA, USA</div>
-</div>
+        <img src="https://www.madeknown.com/images/scott.png" alt="Scott Blanding">
+        <h4>Scott Blanding</h4>
+        <div class="role">Director of Photography, Director</div>
+        <div class="location">Los Angeles, CA, USA</div>
+      </div>
 
       <div class="team-member">
         <img src="https://media.licdn.com/dms/image/v2/D5603AQF_kF8e19RE-w/profile-displayphoto-shrink_100_100/B56ZcYRW6PG0AU-/0/1748458893296?e=1777507200&v=beta&t=aJ1kUhS_9eJ2K5trqbZLYfERT2FufWazDrWwDwXItUQ" alt="Tara McCallum">
@@ -327,110 +327,79 @@
       </div>
     </div>
 
-    <!-- Team Map -->
-    <div class="team-map">
-      <h3 class="section-title">Key Personnel Locations</h3>
-      <div class="map-container">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/North_America_location_map.svg/1200px-North_America_location_map.svg.png"
-             alt="North America Map" class="base-map">
-
-        <div class="map-marker philly">
-          <img src="https://media.licdn.com/dms/image/v2/D5603AQF_kF8e19RE-w/profile-displayphoto-shrink_100_100/B56ZcYRW6PG0AU-/0/1748458893296?e=1777507200&v=beta&t=aJ1kUhS_9eJ2K5trqbZLYfERT2FufWazDrWwDwXItUQ" alt="Ally">
-          <span>Ally – Philadelphia</span>
-        </div>
-
-        <div class="map-marker ottawa1">
-          <img src="https://www.madeknown.com/images/brad.png" alt="Brad">
-          <span>Brad – Philadelphia</span>
-        </div>
-
-        <div class="map-marker ottawa2">
-          <img src="https://www.madeknown.com/images/scott.png" alt="Scott">
-          <span>Scott – Ottawa</span>
-        </div>
-
-        <div class="map-marker ottawa3">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR6TrRtS0SB1NrzREwaJ4mF4Y6lg8qHBdNbg&s" alt="Mitch">
-          <span>Mitch – Ottawa</span>
-        </div>
-
-        <div class="map-marker ottawa4">
-          <img src="https://www.madeknown.com/images/scott.png" alt="Rich">
-          <span>Rich – Ottawa</span>
-        </div>
-      </div>
-    </div>
-
     <!-- Production Partner -->
     <h3 class="section-title">Production Partner</h3>
     <div class="partner-card">
       <h4>Heliconia Productions</h4>
       <p><strong>Location:</strong> Beachburg, Ontario, Canada</p>
       <p>
-        Founded in 1997, Heliconia Productions is one of Canada’s most experienced producers of
-        adventure, travel, and documentary-style video content. Their programming airs on Discovery
-        Channel, PBS, and Outside TV, reaching more than 90 million households in the United States.
+        Heliconia Productions is one of Canada’s most experienced producers of adventure,
+        travel, and documentary-style content, with programming broadcast on Discovery Channel,
+        PBS, and Outside TV, reaching more than 90 million households.
       </p>
       <p>
-        Website: <a href="https://www.heliconia.ca" target="_blank">https://www.heliconia.ca</a>
+        <strong>Website:</strong>
+        <a href="https://www.heliconia.ca" target="_blank">https://www.heliconia.ca</a>
       </p>
     </div>
 
-    <!-- Selected Work Samples -->
-    <h3 class="section-title">Selected Work Samples</h3>
+    <!-- Key Personnel Locations Map -->
+    <section class="team-map">
+      <h3 class="section-title">Key Personnel Locations</h3>
+      <div class="map-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/North_America_blank_map.svg" alt="North America Map" class="base-map">
+
+        <div class="map-marker philly">
+          <img src="https://www.madeknown.com/images/brad.png" alt="Brad">
+          <span>Brad – Philadelphia</span>
+        </div>
+
+        <div class="map-marker philly2">
+          <img src="https://media.licdn.com/dms/image/v2/D5603AQF_kF8e19RE-w/profile-displayphoto-shrink_100_100/B56ZcYRW6PG0AU-/0/1748458893296?e=1777507200&v=beta&t=aJ1kUhS_9eJ2K5trqbZLYfERT2FufWazDrWwDwXItUQ" alt="Ally">
+          <span>Ally – Philadelphia</span>
+        </div>
+
+        <div class="map-marker losangeles">
+          <img src="https://www.madeknown.com/images/scott.png" alt="Scott">
+          <span>Scott – Los Angeles</span>
+        </div>
+
+        <div class="map-marker ottawa1">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR6TrRtS0SB1NrzREwaJ4mF4Y6lg8qHBdNbg&s" alt="Mitch">
+          <span>Mitch – Ottawa</span>
+        </div>
+
+        <div class="map-marker ottawa2">
+          <img src="https://www.madeknown.com/images/scott.png" alt="Rich">
+          <span>Rich – Ottawa</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Samples -->
+    <h3 class="section-title">Work Samples</h3>
     <div class="video-grid">
-      <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/2QvpjRLXZu8" allowfullscreen></iframe>
-        <h4>The Sigmund Project – Platform Launch</h4>
-      </div>
-      <div class="video-item">
-        <iframe src="https://player.vimeo.com/video/132164108" allowfullscreen></iframe>
-        <h4>Papua New Guinea Tourism Board – New York Event Interviews</h4>
-      </div>
+
       <div class="video-item">
         <iframe src="https://www.youtube.com/embed/B3wrnDvipnE" allowfullscreen></iframe>
-        <h4>Andean Health & Development – Infrastructure Campaign</h4>
+        <h4>Infrastructure Campaign</h4>
       </div>
+
       <div class="video-item">
         <iframe src="https://www.youtube.com/embed/BWlgBhgephY" allowfullscreen></iframe>
-        <h4>CropLife America – Agricultural Innovation Campaign</h4>
+        <h4>Agricultural Innovation Campaign</h4>
       </div>
-    </div>
 
-    <!-- Rich Beattie Work Samples -->
-    <h3 class="section-title">Additional Work Samples – Rich Beattie</h3>
-    <div class="video-grid">
       <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/Vl8swka0thw" allowfullscreen></iframe>
-        <h4>2025 Year in Review</h4>
-        <p>Cinematic storytelling highlights across sectors.</p>
+        <iframe src="https://www.youtube.com/embed/11x0_k1sMUY" allowfullscreen></iframe>
+        <h4>Community Destination Promotion</h4>
       </div>
+
       <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/D3sEX1wuU-4" allowfullscreen></iframe>
-        <h4>If Netflix Made a Documentary About the Eclipse</h4>
-        <p>Documentary-style production with strong narrative depth.</p>
+        <iframe src="https://www.youtube.com/embed/mu2rNLG4-aI" allowfullscreen></iframe>
+        <h4>Seasonal Tourism Campaign</h4>
       </div>
-      <div class="video-item">
-        <iframe src="https://www.youtube.com/embed/PBiOkszu5qA" allowfullscreen></iframe>
-        <h4>Do You Have What It Takes? – Ottawa Rowing Club</h4>
-        <p>Community-focused promotional storytelling filmed in Ottawa.</p>
-      </div>
-      <div class="video-item">
-        <iframe src="https://player.vimeo.com/video/146186425" allowfullscreen></iframe>
-        <h4>SideChef – Brand Video</h4>
-      </div>
-      <div class="video-item">
-        <iframe src="https://player.vimeo.com/video/221464315" allowfullscreen></iframe>
-        <h4>Lutheran World Relief – Coffee Is Life</h4>
-      </div>
-      <div class="video-item">
-        <iframe src="https://player.vimeo.com/video/137018485" allowfullscreen></iframe>
-        <h4>Stone + Cloth – Brand Story</h4>
-      </div>
-      <div class="video-item">
-        <iframe src="https://player.vimeo.com/video/221464023" allowfullscreen></iframe>
-        <h4>Lutheran World Relief – Coffee Farmer</h4>
-      </div>
+
     </div>
 
   </div>

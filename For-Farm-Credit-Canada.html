@@ -23,16 +23,12 @@
       background-image: url('https://www.madeknown.com/images/about.jpeg');
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
       position: relative;
     }
 
     .header-overlay {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background: rgba(0,0,0,0.35);
     }
 
@@ -48,7 +44,7 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: -80px auto 0 auto;
       background: #ffffff;
       padding: 100px 40px 80px 40px;
@@ -68,12 +64,12 @@
       font-family: 'Playfair Display', serif;
       font-size: 46px;
       font-weight: 400;
-      margin: 0 0 10px 0;
+      margin-bottom: 10px;
     }
 
     h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 400;
       color: #555;
       margin-top: 0;
@@ -85,6 +81,7 @@
       font-weight: 400;
       margin-top: 80px;
       margin-bottom: 20px;
+      text-align: center;
     }
 
     p {
@@ -92,6 +89,7 @@
       margin-bottom: 20px;
     }
 
+    /* Team Grid */
     .team-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -105,6 +103,12 @@
       border: 1px solid #eeeeee;
       border-radius: 6px;
       text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
 
     .team-member img {
@@ -123,7 +127,6 @@
     .team-member .role {
       font-size: 14px;
       color: #555;
-      margin-bottom: 4px;
     }
 
     .team-member .location {
@@ -132,6 +135,7 @@
       font-style: italic;
     }
 
+    /* Partner Card */
     .partner-card {
       background: #f9f9f9;
       padding: 30px;
@@ -145,18 +149,78 @@
       font-size: 22px;
     }
 
+    /* Video Grid */
     .video-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
       margin-top: 40px;
     }
 
     .video-item iframe {
       width: 100%;
-      height: 420px;
+      height: 200px;
+      border-radius: 8px;
       border: none;
     }
+
+    .video-item h4 {
+      margin-top: 12px;
+      font-size: 18px;
+    }
+
+    .video-item p {
+      font-size: 15px;
+      color: #666;
+    }
+
+    /* Map Section */
+    .team-map {
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    .map-container {
+      position: relative;
+      max-width: 1000px;
+      margin: 30px auto;
+    }
+
+    .base-map {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .map-marker {
+      position: absolute;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .map-marker img {
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .map-marker span {
+      display: block;
+      margin-top: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      background: rgba(255,255,255,0.95);
+      padding: 3px 6px;
+      border-radius: 6px;
+    }
+
+    /* Marker Positions */
+    .philly { top: 60%; left: 72%; }
+    .ottawa1 { top: 42%; left: 63%; }
+    .ottawa2 { top: 45%; left: 60%; }
+    .ottawa3 { top: 48%; left: 66%; }
+    .ottawa4 { top: 40%; left: 66%; }
 
     .footer {
       text-align: center;
@@ -174,11 +238,11 @@
     }
 
     @media (max-width: 768px) {
-      .video-item iframe {
-        height: 260px;
-      }
       .container {
         padding: 80px 20px 40px 20px;
+      }
+      .video-item iframe {
+        height: 180px;
       }
     }
   </style>
@@ -227,7 +291,6 @@
     <!-- Key Personnel -->
     <h3 class="section-title">Key Personnel</h3>
     <div class="team-grid">
-
       <div class="team-member">
         <img src="https://www.madeknown.com/images/brad.png" alt="Brad LaBriola">
         <h4>Brad LaBriola</h4>
@@ -239,7 +302,7 @@
         <img src="https://www.madeknown.com/images/scott.png" alt="Scott Blanding">
         <h4>Scott Blanding</h4>
         <div class="role">Director of Photography, Director</div>
-        <div class="location">Los Angeles, CA, USA</div>
+        <div class="location">Ottawa, ON, Canada</div>
       </div>
 
       <div class="team-member">
@@ -253,16 +316,49 @@
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR6TrRtS0SB1NrzREwaJ4mF4Y6lg8qHBdNbg&s" alt="Mitch Beattie">
         <h4>Mitch Beattie</h4>
         <div class="role">Production Lead</div>
-        <div class="location">Brockville, ON, Canada</div>
+        <div class="location">Ottawa, ON, Canada</div>
       </div>
 
       <div class="team-member">
         <img src="https://www.madeknown.com/images/about.jpeg" alt="Ally LaBriola">
         <h4>Ally LaBriola</h4>
         <div class="role">Marketing Strategy & AI Integration</div>
-        <div class="location">Brisbane, QLD, Australia</div>
+        <div class="location">Philadelphia, PA, USA</div>
       </div>
+    </div>
 
+    <!-- Team Map -->
+    <div class="team-map">
+      <h3 class="section-title">Key Personnel Locations</h3>
+      <div class="map-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/North_America_location_map.svg/1200px-North_America_location_map.svg.png"
+             alt="North America Map" class="base-map">
+
+        <div class="map-marker philly">
+          <img src="https://media.licdn.com/dms/image/v2/D5603AQF_kF8e19RE-w/profile-displayphoto-shrink_100_100/B56ZcYRW6PG0AU-/0/1748458893296?e=1777507200&v=beta&t=aJ1kUhS_9eJ2K5trqbZLYfERT2FufWazDrWwDwXItUQ" alt="Ally">
+          <span>Ally – Philadelphia</span>
+        </div>
+
+        <div class="map-marker ottawa1">
+          <img src="https://www.madeknown.com/images/brad.png" alt="Brad">
+          <span>Brad – Philadelphia</span>
+        </div>
+
+        <div class="map-marker ottawa2">
+          <img src="https://www.madeknown.com/images/scott.png" alt="Scott">
+          <span>Scott – Ottawa</span>
+        </div>
+
+        <div class="map-marker ottawa3">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR6TrRtS0SB1NrzREwaJ4mF4Y6lg8qHBdNbg&s" alt="Mitch">
+          <span>Mitch – Ottawa</span>
+        </div>
+
+        <div class="map-marker ottawa4">
+          <img src="https://www.madeknown.com/images/scott.png" alt="Rich">
+          <span>Rich – Ottawa</span>
+        </div>
+      </div>
     </div>
 
     <!-- Production Partner -->
@@ -276,177 +372,67 @@
         Channel, PBS, and Outside TV, reaching more than 90 million households in the United States.
       </p>
       <p>
-        Heliconia has delivered multi-episode productions across Canada and internationally for
-        tourism boards, government agencies, and major brands. Their small-crew, multi-deliverable
-        production model aligns perfectly with FCC’s national storytelling needs.
-      </p>
-      <p>
-        <strong>Website:</strong>
-        <a href="https://www.heliconia.ca" target="_blank">https://www.heliconia.ca</a>
+        Website: <a href="https://www.heliconia.ca" target="_blank">https://www.heliconia.ca</a>
       </p>
     </div>
 
-    <!-- Work Samples -->
+    <!-- Selected Work Samples -->
     <h3 class="section-title">Selected Work Samples</h3>
     <div class="video-grid">
-
       <div class="video-item">
         <iframe src="https://www.youtube.com/embed/2QvpjRLXZu8" allowfullscreen></iframe>
         <h4>The Sigmund Project – Platform Launch</h4>
       </div>
-
       <div class="video-item">
         <iframe src="https://player.vimeo.com/video/132164108" allowfullscreen></iframe>
         <h4>Papua New Guinea Tourism Board – New York Event Interviews</h4>
       </div>
-
       <div class="video-item">
         <iframe src="https://www.youtube.com/embed/B3wrnDvipnE" allowfullscreen></iframe>
         <h4>Andean Health & Development – Infrastructure Campaign</h4>
       </div>
-
       <div class="video-item">
         <iframe src="https://www.youtube.com/embed/BWlgBhgephY" allowfullscreen></iframe>
         <h4>CropLife America – Agricultural Innovation Campaign</h4>
       </div>
-
-    </div>
-<section class="rich-videos">
-  <h2>Additional Work Samples – Rich Beattie</h2>
-  <p>
-    The following videos highlight Rich Beattie’s extensive experience in cinematic storytelling,
-    documentary-style production, and destination-focused content creation. These samples demonstrate
-    the caliber of visual storytelling that will be applied to the VIPA project.
-  </p>
-
-  <div class="video-grid">
-
-    <!-- 2025 Year in Review -->
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/Vl8swka0thw"
-              title="2025 Year in Review"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-      <h4>2025 Year in Review</h4>
-      <p>Showcases a range of cinematic storytelling and production highlights across multiple sectors.</p>
     </div>
 
-    <!-- Netflix Eclipse Documentary Style -->
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/D3sEX1wuU-4"
-              title="If Netflix Made a Documentary About the Eclipse"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-      <h4>If Netflix Made a Documentary About the Eclipse</h4>
-      <p>A cinematic, documentary-style production demonstrating narrative depth and visual impact.</p>
+    <!-- Rich Beattie Work Samples -->
+    <h3 class="section-title">Additional Work Samples – Rich Beattie</h3>
+    <div class="video-grid">
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/Vl8swka0thw" allowfullscreen></iframe>
+        <h4>2025 Year in Review</h4>
+        <p>Cinematic storytelling highlights across sectors.</p>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/D3sEX1wuU-4" allowfullscreen></iframe>
+        <h4>If Netflix Made a Documentary About the Eclipse</h4>
+        <p>Documentary-style production with strong narrative depth.</p>
+      </div>
+      <div class="video-item">
+        <iframe src="https://www.youtube.com/embed/PBiOkszu5qA" allowfullscreen></iframe>
+        <h4>Do You Have What It Takes? – Ottawa Rowing Club</h4>
+        <p>Community-focused promotional storytelling filmed in Ottawa.</p>
+      </div>
+      <div class="video-item">
+        <iframe src="https://player.vimeo.com/video/146186425" allowfullscreen></iframe>
+        <h4>SideChef – Brand Video</h4>
+      </div>
+      <div class="video-item">
+        <iframe src="https://player.vimeo.com/video/221464315" allowfullscreen></iframe>
+        <h4>Lutheran World Relief – Coffee Is Life</h4>
+      </div>
+      <div class="video-item">
+        <iframe src="https://player.vimeo.com/video/137018485" allowfullscreen></iframe>
+        <h4>Stone + Cloth – Brand Story</h4>
+      </div>
+      <div class="video-item">
+        <iframe src="https://player.vimeo.com/video/221464023" allowfullscreen></iframe>
+        <h4>Lutheran World Relief – Coffee Farmer</h4>
+      </div>
     </div>
 
-    <!-- Brockville Rowing Club -->
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/PBiOkszu5qA"
-              title="Do You Have What It Takes? – Brockville Rowing Club"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen></iframe>
-      <h4>Do You Have What It Takes? – Brockville Rowing Club</h4>
-      <p>Community-focused promotional storytelling highlighting authentic local engagement.</p>
-    </div>
-
-    <!-- SideChef Brand Video -->
-    <div class="video-item">
-      <iframe src="https://player.vimeo.com/video/146186425"
-              title="SideChef Brand Video"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen></iframe>
-      <h4>SideChef – Brand Video</h4>
-      <p>Brand storytelling that blends lifestyle visuals with product engagement.</p>
-    </div>
-
-    <!-- Lutheran World Relief - Coffee Is Life -->
-    <div class="video-item">
-      <iframe src="https://player.vimeo.com/video/221464315"
-              title="Lutheran World Relief – Coffee Is Life"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen></iframe>
-      <h4>Lutheran World Relief – Coffee Is Life</h4>
-      <p>Documentary-style impact storytelling focused on agricultural livelihoods and sustainability.</p>
-    </div>
-
-    <!-- Stone + Cloth Brand Story -->
-    <div class="video-item">
-      <iframe src="https://player.vimeo.com/video/137018485"
-              title="Stone + Cloth – Brand Story"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen></iframe>
-      <h4>Stone + Cloth – Brand Story</h4>
-      <p>Purpose-driven brand narrative connecting consumers with meaningful social impact.</p>
-    </div>
-
-    <!-- Lutheran World Relief - Coffee Farmer -->
-    <div class="video-item">
-      <iframe src="https://player.vimeo.com/video/221464023"
-              title="Lutheran World Relief – Coffee Farmer"
-              frameborder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen></iframe>
-      <h4>Lutheran World Relief – Coffee Farmer</h4>
-      <p>Human-centered storytelling capturing the lives of coffee farming communities.</p>
-    </div>
-
-  </div>
-</section>
-
-<style>
-.rich-videos {
-  padding: 60px 20px;
-  background-color: #ffffff;
-  text-align: center;
-}
-
-.rich-videos h2 {
-  font-size: 2.2rem;
-  margin-bottom: 15px;
-}
-
-.rich-videos p {
-  max-width: 800px;
-  margin: 0 auto 40px auto;
-  font-size: 1rem;
-  color: #555;
-}
-
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.video-item iframe {
-  width: 100%;
-  height: 180px;
-  border-radius: 8px;
-}
-
-.video-item h4 {
-  margin-top: 15px;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-.video-item p {
-  font-size: 0.95rem;
-  color: #666;
-}
-</style>
-
-    </div>
   </div>
 
   <!-- Footer -->

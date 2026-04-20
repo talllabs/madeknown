@@ -1,745 +1,593 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Made Known Pictures | Brand USA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Made Known Pictures | Brand USA</title>
+<meta name="robots" content="noindex,nofollow">
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-    :root {
-      --black:      #000000;
-      --dark:       #1a1a1a;
-      --mid:        #444444;
-      --muted:      #888888;
-      --light:      #cccccc;
-      --border:     #e5e5e5;
-      --bg:         #ffffff;
-      --bg-off:     #f7f7f5;
-      --text:       #111111;
-      --text-muted: #666666;
-      --text-light: #999999;
-      --font-serif: 'Playfair Display', Georgia, serif;
-      --font-sans:  'Inter', system-ui, -apple-system, sans-serif;
-    }
+:root{
+--black:#000;
+--white:#fff;
+--text:#111;
+--muted:#666;
+--light:#999;
+--border:#e7e7e7;
+--bg:#fff;
+--bg2:#f7f7f5;
+--serif:'Playfair Display',serif;
+--sans:'Inter',sans-serif;
+}
 
-    body {
-      font-family: var(--font-sans);
-      background: var(--bg-off);
-      color: var(--text);
-      font-size: 16px;
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
+body{
+font-family:var(--sans);
+background:var(--bg2);
+color:var(--text);
+line-height:1.65;
+-webkit-font-smoothing:antialiased;
+}
 
-    /* ── Password Gate ────────────────────────────────────── */
-    #password-gate {
-      position: fixed;
-      inset: 0;
-      background: var(--dark);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 9999;
-    }
+/* PASSWORD */
 
-    .gate-box {
-      background: var(--bg);
-      border-radius: 8px;
-      padding: 52px 48px;
-      max-width: 420px;
-      width: 90%;
-      text-align: center;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
-    }
+#password-gate{
+position:fixed;
+inset:0;
+background:#111;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+}
 
-    .gate-logo {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-bottom: 28px;
-    }
+.gate-box{
+background:#fff;
+padding:54px;
+width:90%;
+max-width:430px;
+border-radius:10px;
+text-align:center;
+}
 
-    .gate-box h2 {
-      font-family: var(--font-serif);
-      font-size: 26px;
-      font-weight: 400;
-      color: var(--text);
-      margin: 0 0 8px;
-    }
+.gate-logo{
+font-size:12px;
+letter-spacing:.22em;
+text-transform:uppercase;
+color:#999;
+font-weight:700;
+margin-bottom:24px;
+}
 
-    .gate-box p {
-      font-size: 14px;
-      color: var(--text-muted);
-      margin: 0 0 32px;
-    }
+.gate-box h2{
+font-family:var(--serif);
+font-size:34px;
+font-weight:400;
+margin-bottom:8px;
+}
 
-    .gate-box input[type="password"] {
-      width: 100%;
-      padding: 14px 18px;
-      font-size: 15px;
-      font-family: var(--font-sans);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      outline: none;
-      background: var(--bg);
-      color: var(--text);
-      transition: border-color 0.2s;
-      margin-bottom: 14px;
-      letter-spacing: 2px;
-    }
+.gate-box p{
+font-size:14px;
+color:#666;
+margin-bottom:26px;
+}
 
-    .gate-box input[type="password"]:focus { border-color: var(--black); }
+.gate-box input{
+width:100%;
+padding:15px;
+border:1px solid #ddd;
+margin-bottom:12px;
+font-size:15px;
+}
 
-    .gate-box button {
-      width: 100%;
-      padding: 14px;
-      background: var(--black);
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      font-size: 0.78rem;
-      font-family: var(--font-sans);
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
+.gate-box button{
+width:100%;
+padding:15px;
+border:none;
+background:#000;
+color:#fff;
+font-weight:700;
+cursor:pointer;
+}
 
-    .gate-box button:hover { background: var(--dark); }
+.gate-error{
+display:none;
+margin-top:10px;
+font-size:13px;
+color:#c0392b;
+}
 
-    .gate-error {
-      margin-top: 14px;
-      font-size: 13px;
-      color: #c0392b;
-      display: none;
-    }
+/* NAV */
 
-    /* ── Main Content ─────────────────────────────────────── */
-    #main-content { display: none; }
+#main-content{display:none}
 
-    .header-img {
-      width: 100%;
-      height: 380px;
-      background-image: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1600&q=80');
-      background-size: cover;
-      background-position: center 40%;
-      position: relative;
-    }
+.nav{
+position:fixed;
+top:0;
+left:0;
+right:0;
+z-index:1000;
+background:rgba(0,0,0,.55);
+backdrop-filter:blur(10px);
+}
 
-    .header-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.25) 100%);
-    }
+.nav__inner{
+max-width:1280px;
+margin:auto;
+padding:18px 32px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
-    .header-logo-link {
-      position: absolute;
-      top: 28px;
-      left: 40px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-      z-index: 2;
-    }
+.nav__logo{
+display:flex;
+align-items:center;
+gap:10px;
+text-decoration:none;
+color:#fff;
+font-size:12px;
+letter-spacing:.2em;
+font-weight:700;
+}
 
-    .header-logo-img {
-      height: 36px;
-      width: auto;
-      display: block;
-    }
+.nav__logo img{
+height:34px;
+width:auto;
+}
 
-    .header-logo-text {
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: #fff;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-    }
+.nav__links{
+display:flex;
+gap:28px;
+list-style:none;
+}
 
-    /* ── Container ────────────────────────────────────────── */
-    .container {
-      max-width: 1000px;
-      margin: -80px auto 0;
-      background: var(--bg);
-      padding: 80px 56px 80px;
-      border-radius: 8px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.07);
-    }
+.nav__links a{
+color:#fff;
+text-decoration:none;
+font-size:14px;
+}
 
-    /* ── Page Header ──────────────────────────────────────── */
-    .page-headline {
-      font-family: var(--font-serif);
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 400;
-      line-height: 1.2;
-      color: var(--text);
-      margin-bottom: 16px;
-    }
+/* HERO */
 
-    .page-subheading {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      color: var(--text-muted);
-      font-style: italic;
-      line-height: 1.5;
-    }
+.hero{
+height:92vh;
+min-height:760px;
+position:relative;
+overflow:hidden;
+}
 
-    /* ── Section Dividers ─────────────────────────────────── */
-    .work-divider {
-      border: none;
-      border-top: 1px solid var(--border);
-      margin: 64px 0;
-    }
+.hero__slides{
+position:absolute;
+inset:0;
+}
 
-    /* ── Sample Label ─────────────────────────────────────── */
-    .sample-label {
-      display: inline-block;
-      font-size: 0.6rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--bg);
-      background: var(--dark);
-      padding: 4px 10px;
-      border-radius: 3px;
-      margin-bottom: 20px;
-    }
+.hero__slide{
+position:absolute;
+inset:0;
+background-size:cover;
+background-position:center;
+opacity:0;
+animation:fadeSlides 24s infinite;
+}
 
-    /* ── Client Logo ──────────────────────────────────────── */
-    .client-logo-wrap {
-      margin-bottom: 20px;
-    }
+.hero__slide:nth-child(1){
+background-image:url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1800&q=80');
+opacity:1;
+animation-delay:0s;
+}
 
-    .client-logo {
-      max-height: 56px;
-      max-width: 180px;
-      width: auto;
-      object-fit: contain;
-      display: block;
-    }
+.hero__slide:nth-child(2){
+background-image:url('https://images.unsplash.com/photo-1494526585095-c41746248156?w=1800&q=80');
+animation-delay:6s;
+}
 
-    /* ── Work Section ─────────────────────────────────────── */
-    .work-eyebrow {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-bottom: 12px;
-      display: block;
-    }
+.hero__slide:nth-child(3){
+background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1800&q=80');
+animation-delay:12s;
+}
 
-    .work-eyebrow strong {
-      color: var(--text);
-    }
+.hero__slide:nth-child(4){
+background-image:url('https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=1800&q=80');
+animation-delay:18s;
+}
 
-    .work-title {
-      font-family: var(--font-serif);
-      font-size: clamp(1.5rem, 3vw, 2rem);
-      font-weight: 400;
-      color: var(--text);
-      margin: 0 0 20px;
-      line-height: 1.25;
-    }
+@keyframes fadeSlides{
+0%{opacity:0}
+6%{opacity:1}
+25%{opacity:1}
+31%{opacity:0}
+100%{opacity:0}
+}
 
-    .work-body {
-      font-size: 16px;
-      color: var(--text-muted);
-      line-height: 1.75;
-      max-width: 740px;
-    }
+.hero__overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to right,rgba(0,0,0,.7),rgba(0,0,0,.3));
+}
 
-    .work-body p { margin: 0 0 16px; }
-    .work-body p:last-child { margin-bottom: 0; }
+.hero__content{
+position:relative;
+z-index:2;
+max-width:1280px;
+margin:auto;
+padding:220px 32px 0;
+color:#fff;
+}
 
-    .why-sharing {
-      margin-top: 22px;
-      font-size: 14px;
-      color: var(--mid);
-      line-height: 1.65;
-      max-width: 740px;
-      border-left: 2px solid var(--border);
-      padding-left: 16px;
-    }
+.hero__headline{
+font-family:var(--serif);
+font-size:74px;
+line-height:1.02;
+font-weight:400;
+max-width:780px;
+margin-bottom:18px;
+}
 
-    .why-sharing strong {
-      font-weight: 700;
-      color: var(--text);
-    }
+.hero__headline em{
+font-style:italic;
+}
 
-    /* ── Video Embeds ─────────────────────────────────────── */
-    .video-single { margin-top: 32px; }
+.hero__sub{
+font-size:20px;
+max-width:700px;
+opacity:.95;
+margin-bottom:26px;
+}
 
-    .video-pair {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-      margin-top: 32px;
-    }
+.hero__cta{
+display:inline-block;
+padding:14px 24px;
+background:#fff;
+color:#000;
+text-decoration:none;
+font-weight:700;
+border-radius:4px;
+}
 
-    .video-wrap {
-      position: relative;
-      cursor: pointer;
-    }
+/* CLIENT WALL */
 
-    .video-wrap iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: none;
-      border-radius: 4px;
-      display: block;
-      pointer-events: none;
-    }
+.logo-wall{
+background:#fff;
+padding:42px 20px;
+border-bottom:1px solid #eee;
+}
 
-    .video-overlay {
-      position: absolute;
-      inset: 0;
-      background: transparent;
-      cursor: pointer;
-      border-radius: 4px;
-      z-index: 1;
-      transition: background 0.2s;
-    }
+.logo-wall__grid{
+max-width:1280px;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:40px;
+align-items:center;
+}
 
-    .video-wrap:hover .video-overlay {
-      background: rgba(0,0,0,0.08);
-    }
+.logo-wall img{
+max-width:180px;
+max-height:70px;
+margin:auto;
+display:block;
+filter:grayscale(100%);
+opacity:.75;
+}
 
-    .play-icon {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 56px;
-      height: 56px;
-      background: rgba(255,255,255,0.92);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 2;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.2s;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
-    }
+/* BRAND USA SECTION */
 
-    .video-wrap:hover .play-icon {
-      opacity: 1;
-    }
+.wrap{
+max-width:1100px;
+margin:auto;
+padding:70px 28px 90px;
+}
 
-    .play-icon svg {
-      width: 20px;
-      height: 20px;
-      fill: var(--dark);
-      margin-left: 3px;
-    }
+.intro{
+margin-bottom:55px;
+}
 
-    .video-label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-top: 10px;
-    }
+.intro h2{
+font-family:var(--serif);
+font-size:56px;
+font-weight:400;
+line-height:1.1;
+margin-bottom:12px;
+}
 
-    .video-note {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.65;
-      margin-top: 8px;
-      font-style: italic;
-    }
+.intro p{
+font-size:20px;
+color:#666;
+}
 
-    /* ── Lightbox Modal ───────────────────────────────────── */
-    #video-modal {
-      display: none;
-      position: fixed;
-      inset: 0;
-      z-index: 10000;
-      align-items: center;
-      justify-content: center;
-    }
+.divider{
+border:none;
+border-top:1px solid #e6e6e6;
+margin:55px 0;
+}
 
-    .modal-bg {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.92);
-      cursor: pointer;
-    }
+.sample{
+position:relative;
+padding-right:290px;
+}
 
-    .modal-content {
-      position: relative;
-      z-index: 1;
-      width: 90vw;
-      max-width: 960px;
-    }
+.sample-label{
+display:inline-block;
+font-size:11px;
+letter-spacing:.16em;
+text-transform:uppercase;
+background:#111;
+color:#fff;
+padding:6px 10px;
+margin-bottom:18px;
+}
 
-    .modal-close {
-      position: absolute;
-      top: -48px;
-      right: 0;
-      background: none;
-      border: none;
-      color: #fff;
-      font-size: 36px;
-      cursor: pointer;
-      line-height: 1;
-      padding: 4px 8px;
-      opacity: 0.75;
-      transition: opacity 0.15s;
-    }
+.client-corner{
+position:absolute;
+top:0;
+right:0;
+}
 
-    .modal-close:hover { opacity: 1; }
+.client-corner img{
+max-width:320px;
+max-height:110px;
+filter:grayscale(100%);
+opacity:.9;
+}
 
-    .modal-iframe-wrap {
-      position: relative;
-      padding-top: 56.25%;
-    }
+.eyebrow{
+font-size:12px;
+letter-spacing:.22em;
+text-transform:uppercase;
+color:#999;
+font-weight:700;
+margin-bottom:10px;
+}
 
-    .modal-iframe-wrap iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      border-radius: 4px;
-    }
+.sample h3{
+font-family:var(--serif);
+font-size:38px;
+font-weight:400;
+margin-bottom:16px;
+}
 
-    /* ── Closing ──────────────────────────────────────────── */
-    .closing {
-      margin-top: 64px;
-      padding-top: 40px;
-      border-top: 1px solid var(--border);
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
+.sample p{
+color:#666;
+margin-bottom:14px;
+max-width:720px;
+}
 
-    .closing p { margin: 0 0 10px; }
-    .closing p:last-child { margin: 0; }
-    .closing strong { color: var(--text); }
-    .closing a { color: inherit; border-bottom: 1px solid var(--border); transition: border-color 0.2s; text-decoration: none; }
-    .closing a:hover { border-color: var(--text); }
+.note{
+border-left:2px solid #ddd;
+padding-left:16px;
+font-size:14px;
+margin-top:18px;
+color:#555;
+}
 
-    /* ── Footer ───────────────────────────────────────────── */
-    .footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 13px;
-      color: var(--text-light);
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      margin-top: 80px;
-    }
+/* FOOTER */
 
-    .footer a { color: var(--text-muted); text-decoration: none; }
+.footer{
+background:#fff;
+padding:45px 20px;
+text-align:center;
+font-size:13px;
+color:#999;
+border-top:1px solid #eee;
+}
 
-    /* ── Responsive ──────────────────────────────────────── */
-    @media (max-width: 768px) {
-      .container { padding: 72px 22px 56px; }
-      .header-logo-link { left: 22px; }
-      .video-pair { grid-template-columns: 1fr; }
-      .modal-content { width: 95vw; }
-    }
-  </style>
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero__headline{font-size:52px}
+.logo-wall__grid{grid-template-columns:repeat(2,1fr)}
+
+.sample{
+padding-right:0;
+}
+
+.client-corner{
+position:static;
+margin-bottom:18px;
+}
+
+.client-corner img{
+max-width:220px;
+max-height:72px;
+}
+
+.nav__links{
+display:none;
+}
+
+}
+
+@media(max-width:640px){
+.hero{min-height:700px}
+.hero__headline{font-size:42px}
+.intro h2{font-size:40px}
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Password Gate -->
-  <div id="password-gate">
-    <div class="gate-box">
-      <div class="gate-logo">Made Known Pictures</div>
-      <h2>Private Pitch Deck</h2>
-      <p>This page is password protected.</p>
-      <form id="pw-form" autocomplete="off">
-        <input type="password" id="pw-input" placeholder="Enter password" autofocus>
-        <button type="submit">Enter</button>
-        <div class="gate-error" id="pw-error">Incorrect password. Please try again.</div>
-      </form>
-    </div>
-  </div>
+<!-- PASSWORD -->
+<div id="password-gate">
+<div class="gate-box">
+<div class="gate-logo">Made Known Pictures</div>
+<h2>Private Pitch Deck</h2>
+<p>This page is password protected.</p>
+<form id="pw-form">
+<input type="password" id="pw-input" placeholder="Enter password">
+<button type="submit">Enter</button>
+<div class="gate-error" id="pw-error">Incorrect password</div>
+</form>
+</div>
+</div>
 
-  <!-- Main Content -->
-  <div id="main-content">
+<div id="main-content">
 
-    <div class="header-img">
-      <div class="header-overlay"></div>
-      <a href="https://madeknown.com" class="header-logo-link">
-        <img src="../images/logo-white.svg" alt="Made Known Pictures" class="header-logo-img">
-        <span class="header-logo-text">MADE KNOWN</span>
-      </a>
-    </div>
+<!-- NAV -->
+<nav class="nav">
+<div class="nav__inner">
+<a href="https://madeknown.com" class="nav__logo">
+<img src="images/de1634c74_logoicon.png" alt="Made Known Pictures">
+<span>MADE KNOWN</span>
+</a>
 
-    <div class="container">
+<ul class="nav__links">
+<li><a href="#samples">Work</a></li>
+<li><a href="https://madeknown.com">Main Site</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
 
-      <!-- Page Header -->
-      <h1 class="page-headline">Prepared for Brand USA's Consideration</h1>
-      <p class="page-subheading">Seeking the most powerful stories <em>within</em> the assignment.</p>
+<!-- HERO -->
+<section class="hero">
+<div class="hero__slides">
+<div class="hero__slide"></div>
+<div class="hero__slide"></div>
+<div class="hero__slide"></div>
+<div class="hero__slide"></div>
+</div>
 
-      <!-- ── SECTION 1: Tourism Papua New Guinea ─────────── -->
-      <hr class="work-divider">
+<div class="hero__overlay"></div>
 
-      <div class="work-section">
-        <span class="sample-label">Sample A</span>
+<div class="hero__content">
+<h1 class="hero__headline">
+Prepared for Brand USA.<br>
+<em>Selected Storytelling Samples.</em>
+</h1>
+<p class="hero__sub">Destination content, human stories, cinematic commercials, and emotionally resonant documentary work.</p>
+<a href="#samples" class="hero__cta">View Samples</a>
+</div>
+</section>
 
-        <div class="client-logo-wrap">
-          <img src="https://www.australiancruiseassociation.com/sites/default/files/images/media/2022-03/papua-new-guinea-tourism-logo.jpg"
-               class="client-logo" alt="Tourism Papua New Guinea">
-        </div>
+<!-- CLIENT WALL -->
+<section class="logo-wall">
+<div class="logo-wall__grid">
+<img src="https://www.australiancruiseassociation.com/sites/default/files/images/media/2022-03/papua-new-guinea-tourism-logo.jpg">
+<img src="https://lwr.org/sites/default/files/logos/01_Vertical_Primary/LWR_Primary_Vertical_Color.png">
+<img src="https://www.andeanhealth.org/wp-content/uploads/2017/05/logo.png">
+<img src="images/logo1.png">
+<img src="images/logo2.png">
+</div>
+</section>
 
-        <div class="work-eyebrow">B2B Destination + Human Story &nbsp;&nbsp;<strong>Tourism Papua New Guinea</strong></div>
-        <h2 class="work-title">Two Stories, One Assignment, New York</h2>
-        <div class="work-body">
-          <p>Tourism Papua New Guinea brought us to New York for a B2B media lunch — a polished, press-facing event designed to put the destination in front of travel media and industry decision-makers. We delivered that: a sharp, professional event capture that served the tourism authority's trade marketing goals.</p>
-          <p>But while we were there, we noticed something. Fabian Paino — a Papua New Guinean visiting New York for the very first time — was experiencing America with completely fresh eyes. We pitched the client on a second piece: a short, documentary-style portrait of Fabian navigating the city, discovering it the way a first-time traveler discovers any place.</p>
-          <p>They said yes. The result was two distinct pieces from one production: a B2B event film and an authentic human travel story. We think that's what a genuine creative partnership looks like.</p>
-        </div>
-        <div class="why-sharing"><strong>WHY WE'RE SHARING:</strong>&nbsp; It demonstrates both B2B event content and human-centered destination storytelling — and our instinct to find the deeper story inside the assignment.</div>
+<!-- BRAND USA SAMPLES -->
+<section class="wrap" id="samples">
 
-        <div class="video-pair">
-          <div class="video-item">
-            <div class="video-wrap" data-platform="vimeo" data-vid="132164108">
-              <iframe src="https://player.vimeo.com/video/132164108?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0&background=1"
-                      allowfullscreen allow="autoplay; fullscreen"></iframe>
-              <div class="video-overlay"></div>
-              <div class="play-icon">
-                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-              </div>
-            </div>
-            <div class="video-label">NYC Media Lunch &mdash; B2B Event Film</div>
-          </div>
-          <div class="video-item">
-            <div class="video-wrap" data-platform="vimeo" data-vid="109343274">
-              <iframe src="https://player.vimeo.com/video/109343274?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0&background=1"
-                      allowfullscreen allow="autoplay; fullscreen"></iframe>
-              <div class="video-overlay"></div>
-              <div class="play-icon">
-                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-              </div>
-            </div>
-            <div class="video-label">Profile: Fabian Paino &mdash; Human Travel Story</div>
-            <div class="video-note">Meet Fabian Paino, a Malagan Carver from New Ireland, Papua New Guinea who left his village in PNG to visit NYC for the very first time.</div>
-          </div>
-        </div>
-      </div>
+<div class="intro">
+<h2>Brand USA Work Samples</h2>
+<p>Seeking the most powerful stories within the assignment.</p>
+</div>
 
-      <!-- ── SECTION 2: Coffee Is Life ──────────────────── -->
-      <hr class="work-divider">
+<hr class="divider">
 
-      <div class="work-section">
-        <span class="sample-label">Sample B</span>
+<div class="sample">
+<div class="sample-label">Sample A</div>
 
-        <div class="client-logo-wrap">
-          <img src="https://lwr.org/sites/default/files/logos/01_Vertical_Primary/LWR_Primary_Vertical_Color.png"
-               class="client-logo" alt="Lutheran World Relief">
-        </div>
+<div class="client-corner">
+<img src="https://www.australiancruiseassociation.com/sites/default/files/images/media/2022-03/papua-new-guinea-tourism-logo.jpg">
+</div>
 
-        <div class="work-eyebrow">Lifestyle Commercial + Mini-Documentary &nbsp;&nbsp;<strong>Lutheran World Relief</strong></div>
-        <h2 class="work-title">Coffee Is Life &nbsp;&middot;&nbsp; Nicaragua</h2>
-        <div class="work-body">
-          <p>Coffee Is Life is a lifestyle commercial centered on the ritual of the morning cup — warm, cinematic, and rooted in everyday feeling. But instead of actors and scripts, we went to Nicaragua and sat with the farming families whose hands grow the coffee. We took their actual words, their real expressions, and built the commercial around them. Non-actors. Real stories. Scripted from life.</p>
-        </div>
-        <div class="why-sharing"><strong>Why We're Sharing:</strong>&nbsp; It demonstrates tonal range across formats, the ability to build content around real people and real words, and the craft to make both feel genuinely cinematic.</div>
+<div class="eyebrow">B2B Destination + Human Story</div>
+<h3>Two Stories, One Assignment, New York</h3>
 
-        <div class="video-single">
-          <div class="video-wrap" data-platform="vimeo" data-vid="221464315">
-            <iframe src="https://player.vimeo.com/video/221464315?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0&background=1"
-                    allowfullscreen allow="autoplay; fullscreen"></iframe>
-            <div class="video-overlay"></div>
-            <div class="play-icon">
-              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
+<p>Tourism Papua New Guinea brought us to New York for a B2B media lunch designed for travel media and trade partners.</p>
+<p>We then uncovered a second story: Fabian Paino experiencing America for the first time through completely fresh eyes.</p>
 
-      <!-- ── SECTION 3: Andean Health ────────────────────── -->
-      <hr class="work-divider">
+<div class="note">Demonstrates both trade-facing destination content and emotional travel storytelling.</div>
+</div>
 
-      <div class="work-section">
-        <span class="sample-label">Sample C</span>
+<hr class="divider">
 
-        <div class="client-logo-wrap">
-          <img src="https://www.andeanhealth.org/wp-content/uploads/2017/05/logo.png"
-               class="client-logo" alt="Andean Health &amp; Development">
-        </div>
+<div class="sample">
+<div class="sample-label">Sample B</div>
 
-        <div class="work-eyebrow">Documentary / Social Impact &nbsp;&nbsp;<strong>Andean Health &amp; Development</strong></div>
-        <h2 class="work-title">Andes in Motion</h2>
-        <div class="work-body">
-          <p>Andean Health &amp; Development wanted to connect with donors — but they wanted something that would move people. Something that captured what the work actually felt like from the inside.</p>
-          <p>We went to the Andes. We followed the people doing the work and the people whose lives it touched. We filmed against landscapes that were cinematic by nature and intimate by choice. The brief was emotional engagement — and we treated it like a short documentary, not a fundraising appeal.</p>
-          <p>The result is a film that shows what compassionate, sustained aid looks like when it's woven into a community — told from the inside out.</p>
-        </div>
-        <div class="why-sharing"><strong>Why We're Sharing:</strong>&nbsp; It shows our ability to find and tell stories that are emotionally resonant, visually cinematic, and rooted in real place — the foundation of great destination content.</div>
+<div class="client-corner">
+<img src="https://lwr.org/sites/default/files/logos/01_Vertical_Primary/LWR_Primary_Vertical_Color.png">
+</div>
 
-        <div class="video-pair">
-          <div class="video-item">
-            <div class="video-wrap" data-platform="youtube" data-vid="cRm2PmhNk_0">
-              <iframe src="https://www.youtube.com/embed/cRm2PmhNk_0?autoplay=1&mute=1&loop=1&playlist=cRm2PmhNk_0&rel=0&modestbranding=1&controls=0&playsinline=1"
-                      allowfullscreen allow="autoplay; fullscreen"></iframe>
-              <div class="video-overlay"></div>
-              <div class="play-icon">
-                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-              </div>
-            </div>
-            <div class="video-label">Destination Visuals &mdash; B-Roll</div>
-            <div class="video-note">This footage showcases destination visuals later incorporated into the donor-facing explainer film with interviews.</div>
-          </div>
-          <div class="video-item">
-            <div class="video-wrap" data-platform="youtube" data-vid="B3wrnDvipnE">
-              <iframe src="https://www.youtube.com/embed/B3wrnDvipnE?autoplay=1&mute=1&loop=1&playlist=B3wrnDvipnE&rel=0&modestbranding=1&controls=0&playsinline=1"
-                      allowfullscreen allow="autoplay; fullscreen"></iframe>
-              <div class="video-overlay"></div>
-              <div class="play-icon">
-                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-              </div>
-            </div>
-            <div class="video-label">Donor-Facing Explainer with Interviews</div>
-          </div>
-        </div>
-      </div>
+<div class="eyebrow">Lifestyle Commercial + Mini Documentary</div>
+<h3>Coffee Is Life · Nicaragua</h3>
 
-      <!-- ── SECTION 4: Daisy, Peru ──────────────────────── -->
-      <hr class="work-divider">
+<p>Real coffee-growing families. Real words. Crafted into warm cinematic lifestyle storytelling.</p>
+</div>
 
-      <div class="work-section">
-        <span class="sample-label">Sample D</span>
+<hr class="divider">
 
-        <div class="client-logo-wrap">
-          <img src="https://lwr.org/sites/default/files/logos/01_Vertical_Primary/LWR_Primary_Vertical_Color.png"
-               class="client-logo" alt="Lutheran World Relief">
-        </div>
+<div class="sample">
+<div class="sample-label">Sample C</div>
 
-        <div class="work-eyebrow">Mini-Documentary &nbsp;&nbsp;<strong>Lutheran World Relief</strong></div>
-        <h2 class="work-title">Mini Doc &mdash; Daisy, Peru</h2>
-        <div class="work-body">
-          <p>One of our earliest pieces. It has stood the test of time.</p>
-          <p>Daisy lives in Peru. Her landscape is extraordinary. Her life is full. The film is simple, slow, and powerful — a quiet portrait of one person in one place, told with patience and care.</p>
-          <p>No voiceover. No title cards explaining the significance of what you're seeing. Just Daisy, her world, and the camera giving it the space it deserves.</p>
-          <p>We include it because it represents something we believe about storytelling: that when you slow down, stay close, and let people be themselves on screen, something real comes through. That quality doesn't age.</p>
-          <p>Relevant to Brand USA because the best destination content works the same way — human-centered, unhurried, and rooted in a specific place and person. This film is proof that we knew how to do that from the beginning.</p>
-        </div>
+<div class="client-corner">
+<img src="https://www.andeanhealth.org/wp-content/uploads/2017/05/logo.png">
+</div>
 
-        <div class="video-single">
-          <div class="video-wrap" data-platform="vimeo" data-vid="77809770">
-            <iframe src="https://player.vimeo.com/video/77809770?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0&background=1"
-                    allowfullscreen allow="autoplay; fullscreen"></iframe>
-            <div class="video-overlay"></div>
-            <div class="play-icon">
-              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="eyebrow">Documentary / Social Impact</div>
+<h3>Andes in Motion</h3>
 
-      <!-- ── Closing ──────────────────────────────────────── -->
-      <div class="closing">
-        <p>We hope you enjoy! Happy to provide more samples or please visit <strong><a href="https://madeknown.com" target="_blank">madeknown.com</a></strong> for more.</p>
-        <p>Full portfolio at <strong><a href="https://madeknown.com" target="_blank">madeknown.com</a></strong> &mdash; additional samples available on request.</p>
-      </div>
+<p>Visually rich human storytelling rooted in place, community, and purpose.</p>
+</div>
 
-    </div>
+<hr class="divider">
 
-    <div class="footer">
-      Made Known Pictures &copy; 2026 &nbsp;&middot;&nbsp;
-      <a href="https://madeknown.com" target="_blank">madeknown.com</a>
-    </div>
+<div class="sample">
+<div class="sample-label">Sample D</div>
 
-  </div>
+<div class="client-corner">
+<img src="https://lwr.org/sites/default/files/logos/01_Vertical_Primary/LWR_Primary_Vertical_Color.png">
+</div>
 
-  <!-- Lightbox Modal -->
-  <div id="video-modal">
-    <div class="modal-bg" id="modal-bg"></div>
-    <div class="modal-content">
-      <button class="modal-close" id="modal-close">&times;</button>
-      <div class="modal-iframe-wrap">
-        <iframe id="modal-iframe" src="" allowfullscreen allow="autoplay; fullscreen"></iframe>
-      </div>
-    </div>
-  </div>
+<div class="eyebrow">Mini Documentary</div>
+<h3>Daisy, Peru</h3>
 
-  <script>
-    /* ── Password Gate ─────────────────────────────────────── */
-    (function () {
-      var CORRECT = 'america';
-      var gate = document.getElementById('password-gate');
-      var content = document.getElementById('main-content');
-      var form = document.getElementById('pw-form');
-      var input = document.getElementById('pw-input');
-      var error = document.getElementById('pw-error');
+<p>A quiet timeless portrait proving the power of patient, human-centered storytelling.</p>
+</div>
 
-      function unlock() {
-        gate.style.display = 'none';
-        content.style.display = 'block';
-        sessionStorage.setItem('brandusa_auth', '1');
-      }
+<div style="margin-top:70px;color:#666;font-size:16px">
+We hope you enjoy. Happy to provide more samples or please visit https://madeknown.com for more.
+</div>
 
-      if (sessionStorage.getItem('brandusa_auth') === '1') {
-        unlock();
-      }
+</section>
 
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        if (input.value === CORRECT) {
-          unlock();
-        } else {
-          error.style.display = 'block';
-          input.value = '';
-          input.focus();
-        }
-      });
-    })();
+<footer class="footer" id="contact">
+Made Known Pictures © 2026 · https://madeknown.com
+</footer>
 
-    /* ── Video Lightbox ────────────────────────────────────── */
-    (function () {
-      var modal = document.getElementById('video-modal');
-      var modalIframe = document.getElementById('modal-iframe');
+</div>
 
-      function openModal(platform, vid) {
-        var src = '';
-        if (platform === 'vimeo') {
-          src = 'https://player.vimeo.com/video/' + vid + '?autoplay=1&title=0&byline=0&portrait=0';
-        } else if (platform === 'youtube') {
-          src = 'https://www.youtube.com/embed/' + vid + '?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3';
-        }
-        modalIframe.src = src;
-        modal.style.display = 'flex';
-        document.body.style.overflow = 'hidden';
-      }
+<script>
+(function(){
+var CORRECT='beautiful';
+var gate=document.getElementById('password-gate');
+var main=document.getElementById('main-content');
+var form=document.getElementById('pw-form');
+var input=document.getElementById('pw-input');
+var err=document.getElementById('pw-error');
 
-      function closeModal() {
-        modal.style.display = 'none';
-        modalIframe.src = '';
-        document.body.style.overflow = '';
-      }
+function unlock(){
+gate.style.display='none';
+main.style.display='block';
+sessionStorage.setItem('brandusa_auth','1');
+}
 
-      document.querySelectorAll('.video-overlay').forEach(function (overlay) {
-        overlay.addEventListener('click', function () {
-          var wrap = this.closest('.video-wrap');
-          openModal(wrap.dataset.platform, wrap.dataset.vid);
-        });
-      });
+if(sessionStorage.getItem('brandusa_auth')==='1'){unlock();}
 
-      document.getElementById('modal-bg').addEventListener('click', closeModal);
-      document.getElementById('modal-close').addEventListener('click', closeModal);
-
-      document.addEventListener('keydown', function (e) {
-        if (e.key === 'Escape') closeModal();
-      });
-    })();
-  </script>
+form.addEventListener('submit',function(e){
+e.preventDefault();
+if(input.value===CORRECT){unlock();}
+else{
+err.style.display='block';
+input.value='';
+}
+});
+})();
+</script>
 
 </body>
 </html>

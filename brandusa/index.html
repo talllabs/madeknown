@@ -140,31 +140,29 @@
       background: linear-gradient(to right, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.25) 100%);
     }
 
-    .header-logo {
+    .header-logo-link {
       position: absolute;
-      top: 30px;
+      top: 28px;
       left: 40px;
-      font-size: 0.65rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      z-index: 2;
+    }
+
+    .header-logo-img {
+      height: 36px;
+      width: auto;
+      display: block;
+    }
+
+    .header-logo-text {
+      font-size: 0.7rem;
       font-weight: 600;
       color: #fff;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      z-index: 2;
-    }
-
-    .header-badge {
-      position: absolute;
-      top: 30px;
-      right: 40px;
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: rgba(255,255,255,0.65);
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      z-index: 2;
-      border: 1px solid rgba(255,255,255,0.3);
-      padding: 6px 14px;
-      border-radius: 4px;
     }
 
     /* ── Container ────────────────────────────────────────── */
@@ -178,25 +176,22 @@
     }
 
     /* ── Page Header ──────────────────────────────────────── */
-    .page-eyebrow {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      margin-bottom: 20px;
-      display: block;
-    }
-
     .page-headline {
       font-family: var(--font-serif);
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 400;
       line-height: 1.2;
       color: var(--text);
+      margin-bottom: 16px;
     }
 
-    .page-headline em { font-style: italic; }
+    .page-subheading {
+      font-family: var(--font-serif);
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      font-style: italic;
+      line-height: 1.5;
+    }
 
     /* ── Section Dividers ─────────────────────────────────── */
     .work-divider {
@@ -205,19 +200,30 @@
       margin: 64px 0;
     }
 
-    .era-divider {
-      border: none;
-      border-top: 2px solid var(--black);
-      margin: 72px 0 0;
+    /* ── Sample Label ─────────────────────────────────────── */
+    .sample-label {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--bg);
+      background: var(--dark);
+      padding: 4px 10px;
+      border-radius: 3px;
+      margin-bottom: 20px;
     }
 
-    .era-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--text);
-      margin: 20px 0 64px;
+    /* ── Client Logo ──────────────────────────────────────── */
+    .client-logo-wrap {
+      margin-bottom: 20px;
+    }
+
+    .client-logo {
+      max-height: 56px;
+      max-width: 180px;
+      width: auto;
+      object-fit: contain;
       display: block;
     }
 
@@ -273,14 +279,6 @@
     /* ── Video Embeds ─────────────────────────────────────── */
     .video-single { margin-top: 32px; }
 
-    .video-single iframe {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      border: none;
-      border-radius: 4px;
-      display: block;
-    }
-
     .video-pair {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -288,12 +286,62 @@
       margin-top: 32px;
     }
 
-    .video-item iframe {
+    .video-wrap {
+      position: relative;
+      cursor: pointer;
+    }
+
+    .video-wrap iframe {
       width: 100%;
       aspect-ratio: 16 / 9;
       border: none;
       border-radius: 4px;
       display: block;
+      pointer-events: none;
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      cursor: pointer;
+      border-radius: 4px;
+      z-index: 1;
+      transition: background 0.2s;
+    }
+
+    .video-wrap:hover .video-overlay {
+      background: rgba(0,0,0,0.08);
+    }
+
+    .play-icon {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 56px;
+      height: 56px;
+      background: rgba(255,255,255,0.92);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+
+    .video-wrap:hover .play-icon {
+      opacity: 1;
+    }
+
+    .play-icon svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--dark);
+      margin-left: 3px;
     }
 
     .video-label {
@@ -303,6 +351,69 @@
       text-transform: uppercase;
       color: var(--text-light);
       margin-top: 10px;
+    }
+
+    .video-note {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.65;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* ── Lightbox Modal ───────────────────────────────────── */
+    #video-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 10000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-bg {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.92);
+      cursor: pointer;
+    }
+
+    .modal-content {
+      position: relative;
+      z-index: 1;
+      width: 90vw;
+      max-width: 960px;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -48px;
+      right: 0;
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 36px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px 8px;
+      opacity: 0.75;
+      transition: opacity 0.15s;
+    }
+
+    .modal-close:hover { opacity: 1; }
+
+    .modal-iframe-wrap {
+      position: relative;
+      padding-top: 56.25%;
+    }
+
+    .modal-iframe-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 4px;
     }
 
     /* ── Closing ──────────────────────────────────────────── */
@@ -318,7 +429,7 @@
     .closing p { margin: 0 0 10px; }
     .closing p:last-child { margin: 0; }
     .closing strong { color: var(--text); }
-    .closing a { border-bottom: 1px solid var(--border); transition: border-color 0.2s; }
+    .closing a { color: inherit; border-bottom: 1px solid var(--border); transition: border-color 0.2s; text-decoration: none; }
     .closing a:hover { border-color: var(--text); }
 
     /* ── Footer ───────────────────────────────────────────── */
@@ -332,14 +443,14 @@
       margin-top: 80px;
     }
 
-    .footer a { color: var(--text-muted); }
+    .footer a { color: var(--text-muted); text-decoration: none; }
 
     /* ── Responsive ──────────────────────────────────────── */
     @media (max-width: 768px) {
       .container { padding: 72px 22px 56px; }
-      .header-badge { display: none; }
-      .header-logo { left: 22px; }
+      .header-logo-link { left: 22px; }
       .video-pair { grid-template-columns: 1fr; }
+      .modal-content { width: 95vw; }
     }
   </style>
 </head>
@@ -364,20 +475,29 @@
 
     <div class="header-img">
       <div class="header-overlay"></div>
-      <div class="header-logo">Made Known Pictures</div>
-      <div class="header-badge">Confidential</div>
+      <a href="https://madeknown.com" class="header-logo-link">
+        <img src="../images/logo-white.svg" alt="Made Known Pictures" class="header-logo-img">
+        <span class="header-logo-text">MADE KNOWN</span>
+      </a>
     </div>
 
     <div class="container">
 
       <!-- Page Header -->
-      <div class="page-eyebrow">Selected Work &mdash; Chosen for Brand USA Relevance</div>
-      <h1 class="page-headline">Seeking the most powerful stories <em>within</em> the assignment.</h1>
+      <h1 class="page-headline">Prepared for Brand USA's Consideration</h1>
+      <p class="page-subheading">Seeking the most powerful stories <em>within</em> the assignment.</p>
 
       <!-- ── SECTION 1: Tourism Papua New Guinea ─────────── -->
       <hr class="work-divider">
 
       <div class="work-section">
+        <span class="sample-label">Sample A</span>
+
+        <div class="client-logo-wrap">
+          <img src="https://www.australiancruiseassociation.com/sites/default/files/images/media/2022-03/papua-new-guinea-tourism-logo.jpg"
+               class="client-logo" alt="Tourism Papua New Guinea">
+        </div>
+
         <div class="work-eyebrow">B2B Destination + Human Story &nbsp;&nbsp;<strong>Tourism Papua New Guinea</strong></div>
         <h2 class="work-title">Two Stories, One Assignment, New York</h2>
         <div class="work-body">
@@ -389,12 +509,27 @@
 
         <div class="video-pair">
           <div class="video-item">
-            <iframe src="https://player.vimeo.com/video/132164108" allowfullscreen allow="autoplay"></iframe>
+            <div class="video-wrap" data-platform="vimeo" data-vid="132164108">
+              <iframe src="https://player.vimeo.com/video/132164108?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0&background=1"
+                      allowfullscreen allow="autoplay; fullscreen"></iframe>
+              <div class="video-overlay"></div>
+              <div class="play-icon">
+                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              </div>
+            </div>
             <div class="video-label">NYC Media Lunch &mdash; B2B Event Film</div>
           </div>
           <div class="video-item">
-            <iframe src="https://player.vimeo.com/video/109343274" allowfullscreen allow="autoplay"></iframe>
+            <div class="video-wrap" data-platform="vimeo" data-vid="109343274">
+              <iframe src="https://player.vimeo.com/video/109343274?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0&background=1"
+                      allowfullscreen allow="autoplay; fullscreen"></iframe>
+              <div class="video-overlay"></div>
+              <div class="play-icon">
+                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              </div>
+            </div>
             <div class="video-label">Profile: Fabian Paino &mdash; Human Travel Story</div>
+            <div class="video-note">Meet Fabian Paino, a Malagan Carver from New Ireland, Papua New Guinea who left his village in PNG to visit NYC for the very first time.</div>
           </div>
         </div>
       </div>
@@ -403,6 +538,13 @@
       <hr class="work-divider">
 
       <div class="work-section">
+        <span class="sample-label">Sample B</span>
+
+        <div class="client-logo-wrap">
+          <img src="https://lwr.org/sites/default/files/logos/01_Vertical_Primary/LWR_Primary_Vertical_Color.png"
+               class="client-logo" alt="Lutheran World Relief">
+        </div>
+
         <div class="work-eyebrow">Lifestyle Commercial + Mini-Documentary &nbsp;&nbsp;<strong>Lutheran World Relief</strong></div>
         <h2 class="work-title">Coffee Is Life &nbsp;&middot;&nbsp; Nicaragua</h2>
         <div class="work-body">
@@ -411,7 +553,14 @@
         <div class="why-sharing"><strong>Why We're Sharing:</strong>&nbsp; It demonstrates tonal range across formats, the ability to build content around real people and real words, and the craft to make both feel genuinely cinematic.</div>
 
         <div class="video-single">
-          <iframe src="https://player.vimeo.com/video/221464315" allowfullscreen allow="autoplay"></iframe>
+          <div class="video-wrap" data-platform="vimeo" data-vid="221464315">
+            <iframe src="https://player.vimeo.com/video/221464315?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0&background=1"
+                    allowfullscreen allow="autoplay; fullscreen"></iframe>
+            <div class="video-overlay"></div>
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -419,6 +568,13 @@
       <hr class="work-divider">
 
       <div class="work-section">
+        <span class="sample-label">Sample C</span>
+
+        <div class="client-logo-wrap">
+          <img src="https://www.andeanhealth.org/wp-content/uploads/2017/05/logo.png"
+               class="client-logo" alt="Andean Health &amp; Development">
+        </div>
+
         <div class="work-eyebrow">Documentary / Social Impact &nbsp;&nbsp;<strong>Andean Health &amp; Development</strong></div>
         <h2 class="work-title">Andes in Motion</h2>
         <div class="work-body">
@@ -428,17 +584,44 @@
         </div>
         <div class="why-sharing"><strong>Why We're Sharing:</strong>&nbsp; It shows our ability to find and tell stories that are emotionally resonant, visually cinematic, and rooted in real place — the foundation of great destination content.</div>
 
-        <div class="video-single">
-          <iframe src="https://www.youtube.com/embed/B3wrnDvipnE" allowfullscreen allow="autoplay"></iframe>
+        <div class="video-pair">
+          <div class="video-item">
+            <div class="video-wrap" data-platform="youtube" data-vid="cRm2PmhNk_0">
+              <iframe src="https://www.youtube.com/embed/cRm2PmhNk_0?autoplay=1&mute=1&loop=1&playlist=cRm2PmhNk_0&rel=0&modestbranding=1&controls=0&playsinline=1"
+                      allowfullscreen allow="autoplay; fullscreen"></iframe>
+              <div class="video-overlay"></div>
+              <div class="play-icon">
+                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              </div>
+            </div>
+            <div class="video-label">Destination Visuals &mdash; B-Roll</div>
+            <div class="video-note">This footage showcases destination visuals later incorporated into the donor-facing explainer film with interviews.</div>
+          </div>
+          <div class="video-item">
+            <div class="video-wrap" data-platform="youtube" data-vid="B3wrnDvipnE">
+              <iframe src="https://www.youtube.com/embed/B3wrnDvipnE?autoplay=1&mute=1&loop=1&playlist=B3wrnDvipnE&rel=0&modestbranding=1&controls=0&playsinline=1"
+                      allowfullscreen allow="autoplay; fullscreen"></iframe>
+              <div class="video-overlay"></div>
+              <div class="play-icon">
+                <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              </div>
+            </div>
+            <div class="video-label">Donor-Facing Explainer with Interviews</div>
+          </div>
         </div>
       </div>
 
-      <!-- ── ERA DIVIDER ──────────────────────────────────── -->
-      <hr class="era-divider">
-      <div class="era-label">Early work that stands the test of time</div>
-
       <!-- ── SECTION 4: Daisy, Peru ──────────────────────── -->
+      <hr class="work-divider">
+
       <div class="work-section">
+        <span class="sample-label">Sample D</span>
+
+        <div class="client-logo-wrap">
+          <img src="https://lwr.org/sites/default/files/logos/01_Vertical_Primary/LWR_Primary_Vertical_Color.png"
+               class="client-logo" alt="Lutheran World Relief">
+        </div>
+
         <div class="work-eyebrow">Mini-Documentary &nbsp;&nbsp;<strong>Lutheran World Relief</strong></div>
         <h2 class="work-title">Mini Doc &mdash; Daisy, Peru</h2>
         <div class="work-body">
@@ -450,26 +633,45 @@
         </div>
 
         <div class="video-single">
-          <iframe src="https://player.vimeo.com/video/77809770" allowfullscreen allow="autoplay"></iframe>
+          <div class="video-wrap" data-platform="vimeo" data-vid="77809770">
+            <iframe src="https://player.vimeo.com/video/77809770?autoplay=1&muted=1&loop=1&title=0&byline=0&portrait=0&controls=0&background=1"
+                    allowfullscreen allow="autoplay; fullscreen"></iframe>
+            <div class="video-overlay"></div>
+            <div class="play-icon">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- ── Closing ──────────────────────────────────────── -->
       <div class="closing">
+        <p>We hope you enjoy! Happy to provide more samples or please visit <strong><a href="https://madeknown.com" target="_blank">madeknown.com</a></strong> for more.</p>
         <p>Full portfolio at <strong><a href="https://madeknown.com" target="_blank">madeknown.com</a></strong> &mdash; additional samples available on request.</p>
-        <p>These videos and more can be viewed at <strong>madeknown.com/brandusa</strong> &mdash; password: <strong>americathebeautiful</strong></p>
       </div>
 
     </div>
 
     <div class="footer">
       Made Known Pictures &copy; 2026 &nbsp;&middot;&nbsp;
-      <a href="https://madeknown.com" target="_blank">madeknown.com</a> &nbsp;&middot;&nbsp; Confidential
+      <a href="https://madeknown.com" target="_blank">madeknown.com</a>
     </div>
 
   </div>
 
+  <!-- Lightbox Modal -->
+  <div id="video-modal">
+    <div class="modal-bg" id="modal-bg"></div>
+    <div class="modal-content">
+      <button class="modal-close" id="modal-close">&times;</button>
+      <div class="modal-iframe-wrap">
+        <iframe id="modal-iframe" src="" allowfullscreen allow="autoplay; fullscreen"></iframe>
+      </div>
+    </div>
+  </div>
+
   <script>
+    /* ── Password Gate ─────────────────────────────────────── */
     (function () {
       var CORRECT = 'americathebeautiful';
       var gate = document.getElementById('password-gate');
@@ -497,6 +699,44 @@
           input.value = '';
           input.focus();
         }
+      });
+    })();
+
+    /* ── Video Lightbox ────────────────────────────────────── */
+    (function () {
+      var modal = document.getElementById('video-modal');
+      var modalIframe = document.getElementById('modal-iframe');
+
+      function openModal(platform, vid) {
+        var src = '';
+        if (platform === 'vimeo') {
+          src = 'https://player.vimeo.com/video/' + vid + '?autoplay=1&title=0&byline=0&portrait=0';
+        } else if (platform === 'youtube') {
+          src = 'https://www.youtube.com/embed/' + vid + '?autoplay=1&rel=0&modestbranding=1&iv_load_policy=3';
+        }
+        modalIframe.src = src;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.style.display = 'none';
+        modalIframe.src = '';
+        document.body.style.overflow = '';
+      }
+
+      document.querySelectorAll('.video-overlay').forEach(function (overlay) {
+        overlay.addEventListener('click', function () {
+          var wrap = this.closest('.video-wrap');
+          openModal(wrap.dataset.platform, wrap.dataset.vid);
+        });
+      });
+
+      document.getElementById('modal-bg').addEventListener('click', closeModal);
+      document.getElementById('modal-close').addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeModal();
       });
     })();
   </script>
